@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Data"
+    "\\Data",
+    "\\ExosSQL"
   ],
-  "SelectedNode": "\\differences-MySql-SqlServer.md",
+  "SelectedNode": "\\ExosSQL\\ExosDebut.sql",
   "PreviewInSolutionExplorer": false
 }
