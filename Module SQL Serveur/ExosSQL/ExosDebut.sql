@@ -125,6 +125,9 @@
 
 
 
+
+
+
 -- Exercices Fin J1
 ----1. Affichez toutes les colonnes de la table "Users" pour tous les utilisateurs.
 --SELECT *
@@ -193,18 +196,46 @@
 --WHERE job = 'Doctor' AND salary > 2000
 
 ----14. Affichez les utilisateurs triés par lieu de naissance, puis par salaire.
-SELECT *
-FROM [Users]
-ORDER BY 
+--SELECT *
+--FROM [Users]
+--ORDER BY birth_location , salary
+
 
 ----15. Sélectionnez les utilisateurs nés à Paris et dont le travail est "Lawyer".
+--SELECT *
+--FROM [Users]
+--WHERE birth_location = 'Paris' AND job='Lawyer' ;
+
 
 ----16. Affichez le salaire le plus bas de tout les utilisateurs en utilisant un alias.
+--SELECT TOP 1 first_name, last_name, salary AS salaireMinimum
+--FROM [Users]
+--ORDER BY salary 
+
 
 ----17. Sélectionnez les utilisateurs nés après l'année 1985 et dont le travail est "Engineer".
+--SELECT *
+--FROM [Users]
+--WHERE job = 'Engineer' AND birth_date > '1985-12-31'
+
 
 ----18. Affichez les utilisateurs dont le prénom est "John" et le nom de famille est "Doe".
+--SELECT *
+--FROM [Users]
+--WHERE last_name = 'Doe' AND first_name = 'John'
+
 
 ----19. Sélectionnez les 6 utilisateurs dont le salaire est le plus bas en omettant les trois premiers résultats.
+--SELECT *
+--FROM [Users]
+--ORDER BY salary
+--	OFFSET 3 ROWS
+--	FETCH NEXT 6 ROWS ONLY ;
+
 
 ----20. Affichez les utilisateurs par ordre croissant d'âge, limités aux 5 premiers.
+SELECT *
+FROM [Users]
+ORDER BY age
+	OFFSET 0 ROWS
+	FETCH NEXT 5 ROWS ONLY ;
