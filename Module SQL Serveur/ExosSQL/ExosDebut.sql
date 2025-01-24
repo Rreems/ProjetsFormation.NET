@@ -167,7 +167,7 @@
 ----8. Sélectionnez les utilisateurs nés avant l'année 1990.
 --SELECT *
 --FROM [Users]
---WHERE birth_date < '1990-01-01'
+--WHERE YEAR(birth_date) < 1990
 
 ----9. Affichez les utilisateurs dont le lieu de naissance est "London" ou "Berlin" et dont le travail est "Designer".
 --SELECT *
@@ -234,8 +234,21 @@
 
 
 ----20. Affichez les utilisateurs par ordre croissant d'âge, limités aux 5 premiers.
-SELECT *
-FROM [Users]
-ORDER BY age
-	OFFSET 0 ROWS
-	FETCH NEXT 5 ROWS ONLY ;
+--SELECT *
+--FROM [Users]
+--ORDER BY age
+--	OFFSET 0 ROWS
+--	FETCH NEXT 5 ROWS ONLY ;
+
+
+
+
+
+
+
+
+
+
+
+
+
