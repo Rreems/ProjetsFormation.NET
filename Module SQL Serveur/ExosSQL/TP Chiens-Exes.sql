@@ -160,44 +160,25 @@
 
 --### Niveau 9 : FULL OUTER JOIN combiné
 --19. Récupérez une liste combinée de chiens sans maîtres et de maîtres sans chiens.
---SELECT ChienTriste.* , PersonneMalheureuse.*
---FROM 
---( SELECT * 
---  FROM Chien
---  WHERE Chien.id_maitre IS NULL
---) AS ChienTriste
---FULL JOIN 
---(
---  SELECT *
---  FROM Personne
---  WHERE Personne.id NOT IN 
---	(SELECT Chien.id_maitre
---     FROM Chien 
---     WHERE NOT Chien.id_maitre IS NULL
---    )
---) AS PersonneMalheureuse
---ON NOT PersonneMalheureuse.id = ChienTriste.id_maitre
-
-
 --SELECT *
---FROM Chien
---	FULL JOIN Personne
---	ON id_maitre IS NULL
---	   OR 
---	   (NOT Personne.id IN 
---		(SELECT id_maitre
---		FROM Chien
---		)
+--FROM CHIEN
+--	FULL OUTER JOIN PERSONNE
+--	ON ID_MAITRE = PERSONNE.ID 
+--	WHERE id_maitre IS NULL 
+--	OR personne.id IS NULL
+		
 		
 
 
 --20. Affichez le maître et ses chien associés avec somme de leur tailles respectives 
 --(taille du maître et des chiens).
-
---SELECT Personne.*, Chien.name, Chien.breed , Chien.size + Personne.age AS SommeMystique
---FROM Personne
---	LEFT JOIN Chien
---	ON Personne.id = Chien.id_maitre
+SELECT Personne.id , 
+	   Personne.first_name , 
+	   SUM(COALESCE(Chien.weight, 0) + Personne.age) AS SommePoidsAge
+FROM personne
+	LEFT JOIN chien ON personne.id = chien.id_maitre
+GROUP BY Personne.id , Personne.first_name
+ORDER BY  SommePoidsAge
 
 
 
