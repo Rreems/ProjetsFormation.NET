@@ -23,6 +23,7 @@
 
 --#### Niveau 1 : CREATE
 --1. Créez la table `Chat` avec les spécifications ci-dessus.
+
 --CREATE TABLE Chats (
 --	id INT IDENTITY(1,1), 
 --	name NVARCHAR(50) NOT NULL,
@@ -35,6 +36,7 @@
 
 
 --2. Créez la table `RelationChatChien` pour gérer les relations entre chats et chiens.
+
 --CREATE TABLE RelationChatChien (
 --	id_chat INT, 
 --	id_chien INT, 
@@ -80,6 +82,7 @@
 
 
 ----6. Modifiez la colonne `size` dans la table `Chien` pour qu'elle soit de type `DECIMAL(6,2)`.
+
 --ALTER TABLE Chien
 --ALTER COLUMN size DECIMAL(6,2);
 
@@ -91,6 +94,7 @@
 
 
 --8. Supprimez la colonne `weight` de la table `Chien`.
+
 --ALTER TABLE Chien
 --DROP COLUMN weight;
 
@@ -99,6 +103,7 @@
 
 --### Questions bonus (DDL + DML)
 --1. Listez tous les chats et leurs maîtres respectifs.
+
 --SELECT 
 --    c.* , p.*
 --FROM 
@@ -107,6 +112,7 @@
 --    ON c.id_maitre = p.id ;
 
 --2. Affichez toutes les relations entre les chats et les chiens, y compris leurs types de relations.
+
 --SELECT 
 --    r.id_chat,
 --    c.name,
@@ -120,6 +126,7 @@
 
 
 --3. Modifiez la relation entre "Garfield" et "Hercules" pour qu'elle devienne `loves`.
+
 --UPDATE RelationChatChien
 --SET relation_type = 'loves'
 --WHERE id_chat IN 
