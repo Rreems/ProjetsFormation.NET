@@ -1,7 +1,43 @@
 p {
-    text-align: center;
+    width: 400px;
+    /* height: 50px; */
+    padding: 10px;  /*Appliqué à tout, sinon pas défault: haut; droite; base; gauche; commme horloge */
+    border: 2px solid rgb(156, 73, 73);
+    margin: 50px;
+    background-color: rgba(192, 241, 15, 0.384);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', Verdana, sans-serif;
+    font-size: smaller;
+    letter-spacing: 0.4em;
 }
 
-/*
+p:hover{
+    cursor:crosshair;
+    text-decoration: dotted;
+    color:blueviolet;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
 
-*/
+    ::first-line{
+        font-size: 99px;
+    }
+    
+}
+
+p::first-letter{
+    font-size: 29px;
+}
+
+body{
+    background: linear-gradient(0deg, rgba(228,244,50,1) 0%, rgba(164,238,25,0.8225490879945728) 50%, rgba(255,0,239,0.8393558106836485) 100%);
+}
+
+/* 
+Syntaxe:
+
+selecteur {
+    propriété: valeur ;
+}
+
+Select par ID :  #id {..}
+par class :  .text{..}
+
+ */
