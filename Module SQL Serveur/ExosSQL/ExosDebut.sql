@@ -1,3 +1,31 @@
+--SELECT name FROM master.dbo.sysdatabases
+
+----CREATE DATABASE ContactDB;
+--USE ContactDB;
+
+
+--CREATE TABLE personne (
+--	id INT IDENTITY(1,1) PRIMARY KEY,
+--	prenom NVARCHAR(50) NOT NULL,
+--	nom NVARCHAR(50) NOT NULL,
+--	email VARCHAR(255) NOT NULL
+--);
+
+
+--INSERT INTO
+--	personne
+--	(prenom, nom, email)
+--VALUES
+--	('Jean', 'Michel', 'jean@michel.fr');
+
+--SELECT *
+--FROM   information_schema.tables
+--WHERE  table_type='BASE TABLE';
+
+--SELECT * from etudiants
+
+--TRUNCATE TABLE personne
+
 
 --SELECT * FROM [Users] ;
 
@@ -239,13 +267,6 @@
 --ORDER BY age
 --	OFFSET 0 ROWS
 --	FETCH NEXT 5 ROWS ONLY ;
-
-
-
-
-
-
-
 
 
 
