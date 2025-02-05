@@ -8,11 +8,11 @@ using Microsoft.Data.SqlClient;
 
 namespace Exo01EFCore.Models;
 
-internal class Personnage
+public class Personnage
 {
     public int Id { get; set; }
 
-    public string Pseudo { get; set; }
+    public string Pseudo { get; set; } = null!;
 
     public int PointsDeVie { get; set; }
     public int Armure { get; set; }
@@ -30,57 +30,6 @@ internal class Personnage
         return $"Id: {Id}, Pseudo: {Pseudo}, PointsDeVie: {PointsDeVie}, Armure: {Armure}, Degats: {Degats}, DateCreation: {DateCreation:d}, NombrePersonnesTues: {NombrePersonnesTues}";
     }
 
-
-
-    public static void Ajouter(Personnage perso)
-    {
-        using ApplicationDbContext context = new ApplicationDbContext();
-
-        context.Personnages.Add(perso);
-        context.SaveChanges();
-
-        Personnage.EstIlMort(perso.Id);
-    }
-
-    public static bool Modifier(Personnage perso)
-    {
-        using ApplicationDbContext context = new ApplicationDbContext();
-
-        Personnage? persoAModifier = context.Personnages.FirstOrDefault(p => p.Id == perso.Id);
-
-
-        if (persoAModifier != null)
-        {
-            // si vide => on laisse le même
-            persoAModifier.Pseudo = string.IsNullOrEmpty(perso.Pseudo) ? persoAModifier.Pseudo : perso.Pseudo;
-
-            persoAModifier.PointsDeVie = perso.PointsDeVie;
-            persoAModifier.Armure = perso.Armure;
-            persoAModifier.Degats = perso.Degats;
-            persoAModifier.DateCreation = perso.DateCreation;
-            persoAModifier.NombrePersonnesTues = perso.NombrePersonnesTues;
-        }
-        else
-        {
-            return false;
-        }
-
-        context.SaveChanges();
-
-        Personnage.EstIlMort(persoAModifier.Id);
-
-        return true;
-
-
-    }
-
-
-    public static List<Personnage>? Afficher()
-    {
-        using ApplicationDbContext context = new ApplicationDbContext();
-
-        return context.Personnages.ToList();
-    }
 
 
     private static bool EstIlMort(int Id)
@@ -124,14 +73,4 @@ internal class Personnage
         }
     }
 
-    public static List<Personnage> AfficherTanks()
-    {
-        using ApplicationDbContext context = new ApplicationDbContext();
-
-        Double vieArmureMoy = context.Personnages.Average(p => p.PointsDeVie + p.Armure);
-
-        return context.Personnages
-            .Where(p => (p.PointsDeVie + p.Armure) > vieArmureMoy)
-            .ToList();
-    }
 }
