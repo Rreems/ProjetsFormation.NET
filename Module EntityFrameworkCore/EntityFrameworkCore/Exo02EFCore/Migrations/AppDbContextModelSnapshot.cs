@@ -31,7 +31,7 @@ namespace Exo02EFCore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NumeroId"));
 
-                    b.Property<int>("HotelId")
+                    b.Property<int?>("HotelId")
                         .HasColumnType("int")
                         .HasColumnName("hotel_id");
 
@@ -91,6 +91,15 @@ namespace Exo02EFCore.Migrations
                     b.HasIndex("HotelId");
 
                     b.ToTable("Clients");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 2,
+                            Nom = "Ratata",
+                            NumeroTelephone = "01544884",
+                            Prenom = "Max"
+                        });
                 });
 
             modelBuilder.Entity("Exo02EFCore.Models.Hotel", b =>
@@ -119,7 +128,7 @@ namespace Exo02EFCore.Migrations
                         .HasColumnType("int")
                         .HasColumnName("client_id");
 
-                    b.Property<int>("HotelId")
+                    b.Property<int?>("HotelId")
                         .HasColumnType("int")
                         .HasColumnName("hotel_id");
 
@@ -140,11 +149,11 @@ namespace Exo02EFCore.Migrations
                 {
                     b.Property<int>("ReservationId")
                         .HasColumnType("int")
-                        .HasColumnName("reservation_id)");
+                        .HasColumnName("reservation_id");
 
                     b.Property<int>("ChambreId")
                         .HasColumnType("int")
-                        .HasColumnName("chambre_id)");
+                        .HasColumnName("chambre_id");
 
                     b.HasKey("ReservationId", "ChambreId");
 
@@ -157,9 +166,7 @@ namespace Exo02EFCore.Migrations
                 {
                     b.HasOne("Exo02EFCore.Models.Hotel", "Hotel")
                         .WithMany("Chambres")
-                        .HasForeignKey("HotelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("HotelId");
 
                     b.Navigation("Hotel");
                 });
@@ -183,9 +190,7 @@ namespace Exo02EFCore.Migrations
 
                     b.HasOne("Exo02EFCore.Models.Hotel", "Hotel")
                         .WithMany("Reservations")
-                        .HasForeignKey("HotelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("HotelId");
 
                     b.Navigation("Client");
 

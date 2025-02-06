@@ -30,10 +30,15 @@ public class AppDbContext : DbContext
     {
         modelBuilder.Entity<ReservationChambre>().HasKey(rc => new { rc.ReservationId, rc.ChambreId });
 
+        modelBuilder.Entity<Reservation>()
+            .HasMany(r => r.Chambres)
+            .WithMany(c => c.Reservations)
+            .UsingEntity<ReservationChambre>();
 
-        //modelBuilder.Entity<Reservation>()
-        //        .HasOne<Hotel>(r => r.Hotel)
-        //        .WithMany(re => re.Reservations)
-        //        .OnDelete(DeleteBehavior.NoAction);
+
+        // DATA SEED
+        modelBuilder.Entity<Client>().HasData(
+            new Client { Id= 2, Nom="Ratata", Prenom="Max", NumeroTelephone="01544884"}
+            );
     }
 }

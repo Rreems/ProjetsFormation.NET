@@ -9,13 +9,16 @@ namespace Exo02EFCore.Models
 {
     public class ReservationChambre
     {
-        [Column("chambre_id)")]
+        //public (int,int) Id = 
+
+
+        [Column("chambre_id")]
         public int ChambreId { get; set; }
 
         public Chambre Chambre { get; set; }
 
 
-        [Column("reservation_id)")]
+        [Column("reservation_id")]
         public int ReservationId { get; set; }
 
         public Reservation Reservation { get; set; }

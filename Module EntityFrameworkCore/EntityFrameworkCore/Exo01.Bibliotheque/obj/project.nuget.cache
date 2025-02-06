@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "v5UH/hFSgMs=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo01.Bibliotheque\\Exo01.Bibliotheque.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrateur\\.nuget\\packages\\mstest.testframework\\3.6.1\\mstest.testframework.3.6.1.nupkg.sha512"
+  ],
+  "logs": []
+}

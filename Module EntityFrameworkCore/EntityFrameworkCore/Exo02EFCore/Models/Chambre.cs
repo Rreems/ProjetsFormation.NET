@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Exo02EFCore.Enum;
+using Exo02EFCore.Models.Enum;
 using Microsoft.EntityFrameworkCore;
 
 namespace Exo02EFCore.Models;
@@ -26,9 +26,10 @@ public class Chambre
 
 
     [Column("hotel_id")]
-    public int HotelId { get; set; }
+    public int? HotelId { get; set; }
     public Hotel Hotel { get; set; } = null!;
 
+    public List<Reservation> Reservations { get; set; } = new List<Reservation>();
     public List<ReservationChambre> ReservationChambres { get; set; } = new List<ReservationChambre>();
 
 }

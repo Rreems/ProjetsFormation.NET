@@ -6,25 +6,37 @@ using System.Reflection.Metadata;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
+using Exo01EFCore.Data;
+using Exo02EFCore.Models;
+using Exo02EFCore.Repositories;
 namespace Exo02EFCore.UI;
 
 
 internal class MainUI
 {
-    //private readonly IRepository<Blog, int> blogRepository;
-    //private readonly IRepository<Post, int> postRepository;
+    private readonly IRepository<Client, int> clientRepository;
+    private readonly IRepository<Chambre, int> chambreRepository;
+    private readonly IRepository<Hotel, int> hotelRepository;
+    private readonly IRepository<Reservation, int> reservationRepository;
 
-    //public MainUI(IRepository<Blog, int> blogRepository, // un CRUD de blogs, peut importe comment il est fait derrière
-    //              IRepository<Post, int> postRepository)
-    //{
-    //    this.blogRepository = blogRepository;
-    //    this.postRepository = postRepository;
-    //}
+
+    public MainUI()
+    {
+        using var _db = new AppDbContext();
+
+        this.clientRepository = new ClientRepository(_db);
+        this.chambreRepository = new ChambreRepository(_db);
+        this.hotelRepository = new HotelRepository(_db);
+        this.reservationRepository = new ReservationRepository(_db);
+    }
 
 
     private static void AfficherMenu()
     {
+        Console.BackgroundColor = ConsoleColor.Red;
+        Console.ForegroundColor = ConsoleColor.Black;
         Console.WriteLine(@" 
+                                                                                                               
  ██░ ██  ▒█████  ▄▄▄█████▓▓█████  ██▓         ██████ ▓█████  ███▄    █   ██████  ▄▄▄        ██████   ██████ 
 ▓██░ ██▒▒██▒  ██▒▓  ██▒ ▓▒▓█   ▀ ▓██▒       ▒██    ▒ ▓█   ▀  ██ ▀█   █ ▒██    ▒ ▒████▄    ▒██    ▒ ▒██    ▒ 
 ▒██▀▀██░▒██░  ██▒▒ ▓██░ ▒░▒███   ▒██░       ░ ▓██▄   ▒███   ▓██  ▀█ ██▒░ ▓██▄   ▒██  ▀█▄  ░ ▓██▄   ░ ▓██▄   
@@ -36,6 +48,8 @@ internal class MainUI
  ░  ░  ░    ░ ░              ░  ░    ░  ░         ░     ░  ░         ░       ░        ░  ░      ░        ░  
                                                                                                             ");
 
+        Console.ResetColor();
+
         Console.WriteLine("1 - Ajouter Client");
         Console.WriteLine("2 - Créer Chambre");
         Console.WriteLine("3 - Créer Hotel");
@@ -44,8 +58,12 @@ internal class MainUI
         Console.WriteLine("0 - Quitter");
     }
 
-    private static void CreerClient()
+    private void CreerClient()
     {
+
+        clientRepository.Add(new Client { Nom = "bob", Prenom = "truc", NumeroTelephone = "01010101" });
+
+
     }
 
     private static void CreerChambre()
@@ -64,7 +82,7 @@ internal class MainUI
     {
     }
 
-    public static void Start()
+    public void Start()
     {
         while (true)
         {

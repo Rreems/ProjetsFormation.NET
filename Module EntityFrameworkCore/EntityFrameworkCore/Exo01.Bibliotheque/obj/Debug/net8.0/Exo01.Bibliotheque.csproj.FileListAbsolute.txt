@@ -1,0 +1,16 @@
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\bin\Debug\net8.0\Exo01.Bibliotheque.deps.json
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\bin\Debug\net8.0\Exo01.Bibliotheque.dll
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\bin\Debug\net8.0\Exo01.Bibliotheque.pdb
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\obj\Debug\net8.0\Exo01.Bibliotheque.csproj.AssemblyReference.cache
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\obj\Debug\net8.0\Exo01.Bibliotheque.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\obj\Debug\net8.0\Exo01.Bibliotheque.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\obj\Debug\net8.0\Exo01.Bibliotheque.AssemblyInfo.cs
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\obj\Debug\net8.0\Exo01.Bibliotheque.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\obj\Debug\net8.0\Exo01.Bibliotheque.sourcelink.json
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\obj\Debug\net8.0\Exo01.Bi.F4EDEB42.Up2Date
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\obj\Debug\net8.0\Exo01.Bibliotheque.dll
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\obj\Debug\net8.0\refint\Exo01.Bibliotheque.dll
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\obj\Debug\net8.0\Exo01.Bibliotheque.pdb
+C:\Users\Administrateur\Documents\DossierTravail\Module EntityFrameworkCore\EntityFrameworkCore\Exo01.Bibliotheque\obj\Debug\net8.0\ref\Exo01.Bibliotheque.dll
