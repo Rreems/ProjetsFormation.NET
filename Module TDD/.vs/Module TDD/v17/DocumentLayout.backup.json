@@ -1,14 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EC1F8EF5-56E4-4687-8451-EE2CB83F706F}|Exo01.Bibliotheque\\Exo01.Bibliotheque.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo01.bibliotheque\\gradingcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC1F8EF5-56E4-4687-8451-EE2CB83F706F}|Exo01.Bibliotheque\\Exo01.Bibliotheque.csproj|solutionrelative:exo01.bibliotheque\\gradingcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D20CB987-DEBE-4E01-B429-4E03F16880F0}|Exo01.Tests\\Exo01.Tests.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo01.tests\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20CB987-DEBE-4E01-B429-4E03F16880F0}|Exo01.Tests\\Exo01.Tests.csproj|solutionrelative:exo01.tests\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94FAB9B2-0ABA-445B-96E4-57EEC9053BEC}|Exo01.Tests\\Exo01.TestsXUnit.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module tdd\\exo01.tests\\testgradingxunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94FAB9B2-0ABA-445B-96E4-57EEC9053BEC}|Exo01.Tests\\Exo01.TestsXUnit.csproj|solutionrelative:exo01.tests\\testgradingxunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +14,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestGradingXUnit.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\Exo01.Tests\\TestGradingXUnit.cs",
+              "RelativeDocumentMoniker": "Exo01.Tests\\TestGradingXUnit.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\Exo01.Tests\\TestGradingXUnit.cs",
+              "RelativeToolTip": "Exo01.Tests\\TestGradingXUnit.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T13:30:53.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -99,32 +112,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GradingCalculator.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo01.Bibliotheque\\GradingCalculator.cs",
-              "RelativeDocumentMoniker": "Exo01.Bibliotheque\\GradingCalculator.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo01.Bibliotheque\\GradingCalculator.cs",
-              "RelativeToolTip": "Exo01.Bibliotheque\\GradingCalculator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T13:25:29.689Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Test1.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo01.Tests\\Test1.cs",
-              "RelativeDocumentMoniker": "Exo01.Tests\\Test1.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo01.Tests\\Test1.cs",
-              "RelativeToolTip": "Exo01.Tests\\Test1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T13:24:11.073Z",
-              "EditorCaption": ""
             }
           ]
         }
