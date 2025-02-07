@@ -9,7 +9,7 @@ public sealed class TestGradingXUnit : IDisposable
 
 
     // SetUp
-    public TestGradingXUnit()
+    private TestGradingXUnit()
     {
         _gradinCalculator = new GradingCalculator();
     }

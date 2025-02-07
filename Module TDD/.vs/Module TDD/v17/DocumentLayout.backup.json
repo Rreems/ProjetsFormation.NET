@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{94FAB9B2-0ABA-445B-96E4-57EEC9053BEC}|Exo01.Tests\\Exo01.TestsXUnit.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module tdd\\exo01.tests\\testgradingxunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94FAB9B2-0ABA-445B-96E4-57EEC9053BEC}|Exo01.Tests\\Exo01.TestsXUnit.csproj|solutionrelative:exo01.tests\\testgradingxunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A428CA08-2030-4561-B8FF-9015C059AB5C}|Exo02.TestMSTest\\Exo02.TestMSTest.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module tdd\\exo02.testmstest\\fibtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A428CA08-2030-4561-B8FF-9015C059AB5C}|Exo02.TestMSTest\\Exo02.TestMSTest.csproj|solutionrelative:exo02.testmstest\\fibtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAA673AE-19B4-4BF4-ADA5-33414569A5CD}|ExoTDD\\Exo03.Tests\\Exo03.Tests.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module tdd\\exotdd\\exo03.tests\\recherchevilletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAA673AE-19B4-4BF4-ADA5-33414569A5CD}|ExoTDD\\Exo03.Tests\\Exo03.Tests.csproj|solutionrelative:exotdd\\exo03.tests\\recherchevilletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BEBE18E-8DC7-4C74-9779-4CE78E423E98}|ExoTDD\\Exo03.Core\\Exo03.Core.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module tdd\\exotdd\\exo03.core\\rechercheville.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BEBE18E-8DC7-4C74-9779-4CE78E423E98}|ExoTDD\\Exo03.Core\\Exo03.Core.csproj|solutionrelative:exotdd\\exo03.core\\rechercheville.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,19 +27,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TestGradingXUnit.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\Exo01.Tests\\TestGradingXUnit.cs",
-              "RelativeDocumentMoniker": "Exo01.Tests\\TestGradingXUnit.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\Exo01.Tests\\TestGradingXUnit.cs",
-              "RelativeToolTip": "Exo01.Tests\\TestGradingXUnit.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAAAdAAAAAAAAAA==",
+              "Title": "FibTest.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\Exo02.TestMSTest\\FibTest.cs",
+              "RelativeDocumentMoniker": "Exo02.TestMSTest\\FibTest.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\Exo02.TestMSTest\\FibTest.cs",
+              "RelativeToolTip": "Exo02.TestMSTest\\FibTest.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAuwFUAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T13:30:53.694Z",
+              "WhenOpened": "2025-02-07T11:27:56.84Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RechercheVilleTest.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
+              "RelativeDocumentMoniker": "ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
+              "RelativeToolTip": "ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T11:26:37.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RechercheVille.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\ExoTDD\\Exo03.Core\\RechercheVille.cs",
+              "RelativeDocumentMoniker": "ExoTDD\\Exo03.Core\\RechercheVille.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\ExoTDD\\Exo03.Core\\RechercheVille.cs",
+              "RelativeToolTip": "ExoTDD\\Exo03.Core\\RechercheVille.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T11:24:00.195Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -112,6 +142,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             }
           ]
         }

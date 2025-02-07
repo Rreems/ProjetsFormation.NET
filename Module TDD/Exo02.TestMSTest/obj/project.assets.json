@@ -684,6 +684,16 @@
             "related": ".xml"
           }
         }
+      },
+      "Exo01.Bibliotheque/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Exo01.Bibliotheque.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Exo01.Bibliotheque.dll": {}
+        }
       }
     }
   },
@@ -1734,10 +1744,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Exo01.Bibliotheque/1.0.0": {
+      "type": "project",
+      "path": "../Exo01.Bibliotheque/Exo01.Bibliotheque.csproj",
+      "msbuildProject": "../Exo01.Bibliotheque/Exo01.Bibliotheque.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Exo01.Bibliotheque >= 1.0.0",
       "MSTest >= 3.6.1",
       "Microsoft.NET.Test.Sdk >= 17.11.1"
     ]
@@ -1773,7 +1789,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\Exo01.Bibliotheque\\Exo01.Bibliotheque.csproj": {
+              "projectPath": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\Exo01.Bibliotheque\\Exo01.Bibliotheque.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
