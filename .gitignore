@@ -400,4 +400,3 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Sous-dossier partie d'un autre dépot Git pour exercice
-Module\ TDD/ExoTDD/
