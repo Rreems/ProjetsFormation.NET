@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CAA673AE-19B4-4BF4-ADA5-33414569A5CD}|ExoTDD\\Exo03.Tests\\Exo03.Tests.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module tdd\\exotdd\\exo03.tests\\recherchevilletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAA673AE-19B4-4BF4-ADA5-33414569A5CD}|ExoTDD\\Exo03.Tests\\Exo03.Tests.csproj|solutionrelative:exotdd\\exo03.tests\\recherchevilletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3BEBE18E-8DC7-4C74-9779-4CE78E423E98}|ExoTDD\\Exo03.Core\\Exo03.Core.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module tdd\\exotdd\\exo03.core\\rechercheville.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3BEBE18E-8DC7-4C74-9779-4CE78E423E98}|ExoTDD\\Exo03.Core\\Exo03.Core.csproj|solutionrelative:exotdd\\exo03.core\\rechercheville.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAA673AE-19B4-4BF4-ADA5-33414569A5CD}|ExoTDD\\Exo03.Tests\\Exo03.Tests.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module tdd\\exotdd\\exo03.tests\\recherchevilletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAA673AE-19B4-4BF4-ADA5-33414569A5CD}|ExoTDD\\Exo03.Tests\\Exo03.Tests.csproj|solutionrelative:exotdd\\exo03.tests\\recherchevilletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 20,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RechercheVilleTest.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
-              "RelativeDocumentMoniker": "ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
-              "RelativeToolTip": "ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T11:26:37.223Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -114,6 +101,19 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RechercheVilleTest.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
+              "RelativeDocumentMoniker": "ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
+              "RelativeToolTip": "ExoTDD\\Exo03.Tests\\RechercheVilleTest.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAwEEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T11:26:37.223Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             }
@@ -125,15 +125,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "RechercheVille.cs",
               "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\ExoTDD\\Exo03.Core\\RechercheVille.cs",
               "RelativeDocumentMoniker": "ExoTDD\\Exo03.Core\\RechercheVille.cs",
               "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module TDD\\ExoTDD\\Exo03.Core\\RechercheVille.cs",
               "RelativeToolTip": "ExoTDD\\Exo03.Core\\RechercheVille.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowCQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T11:24:00.195Z",
+              "WhenOpened": "2025-02-07T13:21:50.363Z",
               "EditorCaption": ""
             }
           ]
