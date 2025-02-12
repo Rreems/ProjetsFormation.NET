@@ -1,0 +1,51 @@
+﻿@model HashSet<Contact>
+
+@* Commentaire RAZOR, disparait quand rendu en HTML *@
+
+<!-- Commentaire HTML ! Accessible depuis DevTools (F12) -->
+@{
+	string message = "Bienvenu sur la page Index des Contacts !";
+
+}
+
+<h3> @message </h3>
+
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#Id</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Numéro</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+
+		@foreach (var contact in Model)
+		{
+			<tr>
+				<th scope="row">@contact.Id</th>
+				<td>@contact.Nom</td>
+				<td>@contact.Prenom</td>
+				<td>@contact.Numero</td>
+				<td><a asp-controller="Contacts" asp-action="Details" class="btn btn-primary" , asp-route-id=@contact.Id><i class="bi bi-box-arrow-in-down-right"></i>  Détail</a></td>
+			</tr>
+		}
+
+    </tbody>
+</table>
+
+
+@* Anchors *@
+
+
+@* HTML Helper *@
+@* @Html.ActionLink("Clic ici pour voir un seul contact", "Details") *@
+
+
+<br />
+@* Tag Helper *@
+<a asp-controller="Contacts" asp-action="Add" class="btn btn-primary" asp-route-id="2">Ajouter</a>

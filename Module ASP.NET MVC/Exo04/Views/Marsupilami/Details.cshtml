@@ -1,0 +1,42 @@
+﻿@{
+	@model Marsupilami
+
+}
+
+<head>
+	<h2>Marsupilami #@Model.Id</h2>
+	<hr />
+</head>
+<body>
+	<table class="table table-striped table-hover">
+		<tbody>
+			<tr>
+				<th scope="col">
+					@{
+						Random random = new Random();
+						int randNumber = random.Next(999);
+						string url = "https://www.placemonkeys.com/200?random=" + (80 + @Model.Id)  ;
+					}
+					<img src= @url
+						 alt="PlaceMonkey profil pic"
+						 width="200">
+				</th>
+			</tr>
+
+			<tr>
+				<th scope="col">@Html.DisplayNameFor(Contact => Contact.Id)</th>
+				<th scope="row">@Model.Id</th>
+			</tr>
+
+			<tr>
+				<th scope="col">@Html.DisplayNameFor(Contact => Contact.PetitNom)</th>
+				<td>@Model.PetitNom</td>
+			</tr>
+
+			<tr>
+				<th scope="col">@Html.DisplayNameFor(Contact => Contact.Couleur)</th>
+				<td>@Model.Couleur</td>
+			</tr>
+		</tbody>
+	</table>
+</body>

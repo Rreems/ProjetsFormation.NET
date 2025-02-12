@@ -1,0 +1,53 @@
+﻿@{
+	ViewData["Title"] = "Marsupilami List";
+
+	@model HashSet<Marsupilami>
+
+}
+
+<head>
+	<div class="d-flex">
+		<h2>Marsupilami List</h2>
+		<div class="ms-auto">
+			<a asp-action="Create" class="btn btn-success">
+				<span class="bi bi-plus-circle"></span> Voir une erreur
+			</a>
+		</div>
+	</div>
+	<hr />
+</head>
+<body>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				@* Pour afficher les valeurs de [Display] de notre CLASSE de marsupilami, vu que l'on a pas à notre disposition d'instance de ce type, 
+						on va privilégier l'utilisation de @Html.DisplayNameForInnerType().
+
+					Si l'on avait eu à notre disposition une instance de marsupilami, on aurait pu réussir à atteindre le même visuel avec @Html.DisplayNameFor(),
+						mais ici, cela n'est possible qu'en faisant une récupération d'un élément de notre variable de type conteneur:
+
+						@Html.DisplayNameFor(ViewBag.Marsupilami.First().Firstname)
+				*@
+				<th>@Html.DisplayNameForInnerType((Marsupilami c) => c.Id)</th>
+				<th>@Html.DisplayNameForInnerType((Marsupilami c) => c.PetitNom)</th>
+				<th>@Html.DisplayNameForInnerType((Marsupilami c) => c.Couleur)</th>
+			</tr>
+		</thead>
+		<tbody>
+			@* @foreach (var marsupilami in ViewBag.Marsupilami) { *@
+			@* @foreach (var marsupilami in marsupilamis) *@
+			@foreach (var marsupilami in Model)
+			{
+				<tr>
+					<td>@marsupilami.Id</td>
+					<td>@marsupilami.PetitNom</td>
+					<td>@marsupilami.Couleur</td>
+					<td><a asp-action="Details" asp-route-id="@marsupilami.Id" class="btn btn-secondary"><span class="bi bi-pencil-square"></span> Details</a></td>
+					<td><a asp-action="Delete" asp-route-id="@marsupilami.Id" class="btn btn-secondary"><span class="bi bi-pencil-square"></span> Supprimer</a></td>
+				</tr>
+			}
+		</tbody>
+
+		<a asp-controller="Marsupilami" asp-action="CreateRandom" class="btn btn-primary">Créer un Marsupilami random</a>
+</body>
+

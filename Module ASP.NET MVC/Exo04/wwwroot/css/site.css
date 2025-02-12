@@ -1,0 +1,33 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+div {
+    background-color: white;
+}
+
+.polka {
+    background-image: radial-gradient(rgb(0, 0, 0) 24%, transparent 26.8%), radial-gradient(rgb(0, 0, 0) 24%, transparent 26.8%), radial-gradient(rgb(129, 65, 80) 24%, transparent 26.8%), radial-gradient(rgb(129, 65, 80) 24%, transparent 26.8%);
+    background-position: 0px 0px, 44px 44px, -4.4px 4.4px, 39.6px 48.4px;
+    background-size: 88px 88px;
+    background-color: rgb(255, 255, 17);
+}

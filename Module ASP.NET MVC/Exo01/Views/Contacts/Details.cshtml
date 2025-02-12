@@ -1,0 +1,40 @@
+﻿@model Contact
+
+
+<h2>Détails du contact @Model.Prenom @Model.Nom</h2>
+
+<table class="table table-striped table-hover">
+	<tbody>
+		<tr>
+			<th scope="col">
+			<img src="https://eliteai.tools/tool/this-person-does-not-exist/go" 
+			alt="ThisPersonDoestExist profil pic"
+			width="200">
+			</th>
+			<th></th>
+		</tr>
+
+		<tr>
+			<th scope="col">@Html.DisplayNameFor(Contact => Contact.Id)</th>
+			<th scope="row">@Model.Id</th>
+		</tr>
+
+		<tr>
+			<th scope="col">@Html.DisplayNameFor(Contact => Contact.Nom)</th>
+			<td>@Model.Nom</td>
+		</tr>
+
+		<tr>
+			<th scope="col">@Html.DisplayNameFor(Contact => Contact.Prenom)</th>
+			<td>@Model.Prenom</td>
+		</tr>
+
+		<tr>
+			<th scope="col">@Html.DisplayNameFor(Contact => Contact.Numero)</th>
+			<td>@Model.Numero</td>			
+		</tr>
+	</tbody>
+</table>
+
+<td><a asp-controller="Contacts" asp-action="Add" class="btn btn-primary">Modifier</a></td>
+<td><a asp-controller="Contacts" asp-action="Add" class="btn btn-primary">Supprimer</a></td>

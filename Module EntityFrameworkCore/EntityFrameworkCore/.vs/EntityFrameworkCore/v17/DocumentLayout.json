@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo02efcore\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|solutionrelative:exo02efcore\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo02efcore\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|solutionrelative:exo02efcore\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo02efcore\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|solutionrelative:exo02efcore\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EC1F8EF5-56E4-4687-8451-EE2CB83F706F}|Exo01.Bibliotheque\\Exo01.Bibliotheque.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo01.bibliotheque\\gradingcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EC1F8EF5-56E4-4687-8451-EE2CB83F706F}|Exo01.Bibliotheque\\Exo01.Bibliotheque.csproj|solutionrelative:exo01.bibliotheque\\gradingcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -103,19 +115,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ClientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Repositories\\ClientRepository.cs",
+              "RelativeDocumentMoniker": "Exo02EFCore\\Repositories\\ClientRepository.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Repositories\\ClientRepository.cs",
+              "RelativeToolTip": "Exo02EFCore\\Repositories\\ClientRepository.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAAG8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T11:24:19.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Repositories\\IRepository.cs",
+              "RelativeDocumentMoniker": "Exo02EFCore\\Repositories\\IRepository.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Repositories\\IRepository.cs",
+              "RelativeToolTip": "Exo02EFCore\\Repositories\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T11:23:45.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Exo02EFCore\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Exo02EFCore\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T11:07:51.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "GradingCalculator.cs",
               "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo01.Bibliotheque\\GradingCalculator.cs",
               "RelativeDocumentMoniker": "Exo01.Bibliotheque\\GradingCalculator.cs",
               "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo01.Bibliotheque\\GradingCalculator.cs",
               "RelativeToolTip": "Exo01.Bibliotheque\\GradingCalculator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAA6wAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-06T13:25:29.689Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Test1.cs",
               "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo01.Tests\\Test1.cs",
               "RelativeDocumentMoniker": "Exo01.Tests\\Test1.cs",

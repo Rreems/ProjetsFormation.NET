@@ -1,0 +1,29 @@
+﻿@model Contact
+
+<h2>Ajout de contact</h2>
+
+<form asp-action="Add" method="post">
+
+  @* <div class="mb-3"> *@
+  @*       <label for="formId" class="form-label">@Html.DisplayNameFor(Contact => Contact.Id): </label> *@
+  @*       <input class="form-control" id="id" placeholder=@Html.DisplayNameFor(Contact => Contact.Id)> *@
+  @* </div> *@
+
+  <div class="mb-3">
+        <label for="formPrenom" class="form-label">@Html.DisplayNameFor(Contact => Contact.Prenom): </label>
+        <input class="form-control" asp-for="Prenom" placeholder=@Html.DisplayNameFor(Contact => Contact.Prenom) />
+  </div>
+
+ <div class="mb-3">
+        <label for="formNom" class="form-label">@Html.DisplayNameFor(Contact => Contact.Nom): </label>
+        <input class="form-control" id="nom" placeholder=@Html.DisplayNameFor(Contact => Contact.Nom)>
+  </div>
+
+ <div class="mb-3">
+        <label for="formNumero" class="form-label">@Html.DisplayNameFor(Contact => Contact.Numero): </label>
+        <input class="form-control" id="numero" placeholder=@Html.DisplayNameFor(Contact => Contact.Numero)>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Ajouter</button>
+</form>
