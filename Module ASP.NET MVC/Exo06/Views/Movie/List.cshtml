@@ -1,0 +1,86 @@
+﻿@model HashSet<Movie>
+
+@{
+	ViewData["Title"] = "Liste de films";
+}
+
+
+<div class="d-flex">
+	<h1>Liste des films</h1>
+	<a asp-action="Create" class="btn btn-success ms-auto">+ Ajouter</a>
+</div>
+<hr />
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameForInnerType((Movie m) => m.Id)
+			</th>
+			<th>
+				@Html.DisplayNameForInnerType((Movie m) => m.Nom)
+			</th>
+			<th>
+				@Html.DisplayNameForInnerType((Movie m) => m.Genre)
+			</th>
+			<th>
+				@Html.DisplayNameForInnerType((Movie m) => m.Duree)
+			</th>
+			<th>
+				@Html.DisplayNameForInnerType((Movie m) => m.Realisateur)
+			</th>
+			<th>
+				@Html.DisplayNameForInnerType((Movie m) => m.Statut)
+			</th>
+			<th>
+				Actions
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var m in Model)
+		{
+			<tr>
+				<td>
+					@m.Id
+				</td>
+				<td>
+					@m.Nom
+				</td>
+				<td>
+					@m.Genre
+				</td>
+				<td>
+					@m.Duree
+				</td>
+				<td>
+					@m.Realisateur
+				</td>
+				<td>
+					@* @m.Statut *@
+					@* <a button id="movie-status" movieSeen="false">xxx</a> *@
+
+					@if (@m.Statut == "À voir")
+					{
+						@* <a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" *@
+						@*    aria-pressed="true">À_voir</a> *@
+
+						<a class="btn btn-success" asp-action="ChangeStatut" asp-route-id="@m.Id">À_voir</a>
+
+					}
+					else
+					{
+						<a class="btn btn-outline-secondary" asp-action="ChangeStatut" asp-route-id="@m.Id">Vu</a>
+						
+					}
+				</td>
+				<td>
+					<a class="btn btn-warning" asp-action="Edit" asp-route-id="@m.Id">Editer</a>
+				</td>
+				<td>
+					<a class="btn btn-danger" asp-action="Delete" asp-route-id="@m.Id">Supprimer</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

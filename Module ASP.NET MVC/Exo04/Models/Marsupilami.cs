@@ -5,7 +5,7 @@ namespace Exo04.Models
     public class Marsupilami
     {
         [Key]
-        public int Id { get; set; } = 1;
+        public int Id { get; set; }
 
 
         [Required]

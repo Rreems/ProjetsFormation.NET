@@ -8,17 +8,17 @@ namespace Exo04.Controllers
 {
     public class MarsupilamiController : Controller
     {
-        private readonly FakeDb _db;
-        public MarsupilamiController(FakeDb db)
+        private readonly MarsupilamiRepository _repo;
+        public MarsupilamiController(MarsupilamiRepository repo)
         {
-            _db = db;
+            _repo = repo;
         }
 
 
         public static string RandomString(List<String> items, int length)
         {
             Random random = new Random();
-            string result="";
+            string result = "";
             for (int i = 0; i < length; i++)
             {
                 result += items[random.Next(items.Count)];
@@ -31,17 +31,18 @@ namespace Exo04.Controllers
 
 
 
-
         // GET: MarsupilamiController
         public IActionResult Index()
         {
-            return View(_db.Marsupilamis);
+            var marsupilamis = _repo.GetAll();
+            return View(marsupilamis);
         }
 
+        // On obtiendra l'id de la route /Marmoset/Details/{valeur} dans les paramètres de la méthode
         // GET: MarsupilamiController/Details/5
         public IActionResult Details(int id)
         {
-            var marsupilamiFound = _db.Marsupilamis.FirstOrDefault(c => c.Id == id);
+            var marsupilamiFound = _repo.GetById(id);
 
             if (marsupilamiFound != null)
             {
@@ -54,7 +55,7 @@ namespace Exo04.Controllers
         }
 
 
-        
+
         // GET: MarsupilamiController/CreateRandom
         public IActionResult CreateRandom()
         {
@@ -78,19 +79,30 @@ namespace Exo04.Controllers
                 "Noir à points jaunes"
                 }[random.Next(4)];
 
-            _db.Marsupilamis.Add(new Marsupilami()
+            _repo.Add(new Marsupilami()
             {
-                Id= _db.Marsupilamis
-                         .Select(x => x.Id)
-                         .DefaultIfEmpty(0)
-                         .Max()+1,
-
-                //_db.Marsupilamis.Max(c => c.Id) + 1  ,
                 PetitNom = chaine,
                 Couleur = color
             });
 
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
+        }
+
+        // POST: MarsupilamiController/Create
+        [HttpPost]
+        public IActionResult Create(Marsupilami marsupilami)
+        {
+            if (ModelState.IsValid)
+            {
+                //var newId = _repo.Marsupilamis.Max(c => c.Id) + 1;
+                //marsupilami.Id = newId;
+                _repo.Add(marsupilami);
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View(marsupilami);
+            }
         }
 
         // GET: MarsupilamiController/Create
@@ -110,12 +122,12 @@ namespace Exo04.Controllers
         // GET: MarsupilamiController/Delete/5
         public IActionResult Delete(int id)
         {
-            var marsupilamiFound = _db.Marsupilamis.FirstOrDefault(c => c.Id == id);
+            var marsupilamiFound = _repo.GetAll().FirstOrDefault(c => c.Id == id);
 
             if (marsupilamiFound != null)
             {
-                _db.Marsupilamis.Remove(marsupilamiFound);
-                return RedirectToAction("Index");
+                _repo.Delete(marsupilamiFound.Id);
+                return RedirectToAction(nameof(Index));
             }
             else
             {

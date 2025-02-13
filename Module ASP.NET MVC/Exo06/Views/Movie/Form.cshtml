@@ -1,0 +1,101 @@
+﻿@model Movie
+
+@{
+    string formMode = ViewBag.FormMode;
+
+
+
+    ViewData["Title"] = formMode switch
+    {
+        "Edit" => "Editer un film",
+        "Delete" => "Supprimer un film",
+        "Details" => "Voir les détails d'un film",
+        _ => "Ajouter un film"
+    };
+
+    var btnDureeClass = formMode switch
+    {
+        "Edit" => "btn-warning",
+        "Delete" => "btn-danger",
+        "Details" => "btn-secondary",
+        _ => "btn-success"
+    };
+
+    var btnText = formMode switch
+    {
+        "Edit" => "Editer",
+        "Delete" => "Confirmer",
+        "Details" => "Retour",
+        _ => "Ajouter"
+    };
+
+}
+
+
+<form asp-action="@formMode">
+    <input type="hidden" asp-for="Id" />
+    <div class="row mb-3">
+        <div class="col-4">
+            <label asp-for="Nom" class="form-label"></label>
+        </div>
+        <div class="col-8">
+            <input asp-for="Nom" class="form-control" />
+        </div>
+        <div class="col-12">
+            <span class="text-danger" asp-validation-for="Nom"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-4">
+            <label asp-for="Genre" class="form-label"></label>
+        </div>
+        <div class="col-8">
+            <input asp-for="Genre" class="form-control" />
+        </div>
+        <div class="col-12">
+            <span class="text-danger" asp-validation-for="Genre"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-4">
+            <label asp-for="Realisateur" class="form-label"></label>
+        </div>
+        <div class="col-8">
+            <input asp-for="Realisateur" class="form-control" />
+        </div>
+        <div class="col-12">
+            <span class="text-danger" asp-validation-for="Realisateur"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-4">
+            <label asp-for="Duree" class="form-label"></label>
+        </div>
+        <div class="col-8">
+            <input asp-for="Duree" class="form-control" />
+        </div>
+        <div class="col-12">
+            <span class="text-danger" asp-validation-for="Duree"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-4">
+            <label asp-for="Statut" class="form-label"></label>
+        </div>
+        <div class="col-8">
+            @* <input asp-for="Statut" class="form-control" /> *@
+            <select asp-for="Statut" class="form-control">
+                <option value="À voir">A voir</option>
+                <option value="Visionné">Visionné</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <span class="text-danger" asp-validation-for="Statut"></span>
+        </div>
+    </div>
+    <div class="d-flex">
+        <button class="ms-auto btn @btnDureeClass">
+            @btnText
+        </button>
+    </div>
+</form>

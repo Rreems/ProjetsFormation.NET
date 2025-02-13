@@ -1,7 +1,8 @@
 ﻿@{
 	ViewData["Title"] = "Marsupilami List";
+	
 
-	@model HashSet<Marsupilami>
+	@model IEnumerable<Marsupilami>
 
 }
 
@@ -10,7 +11,7 @@
 		<h2>Marsupilami List</h2>
 		<div class="ms-auto">
 			<a asp-action="Create" class="btn btn-success">
-				<span class="bi bi-plus-circle"></span> Voir une erreur
+				<span class="bi bi-plus-circle"></span>+ Ajout
 			</a>
 		</div>
 	</div>
