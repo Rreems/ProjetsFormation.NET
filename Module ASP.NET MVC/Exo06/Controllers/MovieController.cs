@@ -16,6 +16,9 @@ public class MovieController : Controller
     public IActionResult Index()
     {
         var movies = _repo.GetAll();
+
+        ViewBag.ListMode = "List";
+
         return View("List", movies);
     }
 
@@ -88,7 +91,8 @@ public class MovieController : Controller
 
         if (movieFound != null)
         {
-            return View(movieFound);
+            ViewBag.ListMode = "Details";
+            return View("List", new HashSet<Movie>() { movieFound });
         }
         else
         {

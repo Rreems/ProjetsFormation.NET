@@ -1,7 +1,16 @@
 ﻿@model HashSet<Movie>
 
 @{
-	ViewData["Title"] = "Liste de films";
+	string listMode = ViewBag.ListMode;
+
+
+
+	ViewData["Title"] = listMode switch
+	{
+		"List" => "Liste de films",
+		"Detail" => "Détails d'un film",
+		_ => "Liste de films"
+	};
 }
 
 
@@ -13,6 +22,11 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
+			@if (listMode == "Details")
+			{
+				<th>
+				</th>
+			}
 			<th>
 				@Html.DisplayNameForInnerType((Movie m) => m.Id)
 			</th>
@@ -35,12 +49,24 @@
 				Actions
 			</th>
 			<th></th>
+			@if (listMode == "List")
+			{
+				<th></th>
+			}
 		</tr>
 	</thead>
 	<tbody>
 		@foreach (var m in Model)
 		{
 			<tr>
+				@if (listMode == "Details")
+				{
+					<td>
+						<img src="https://eliteai.tools/tool/this-person-does-not-exist/go"
+							 alt="ThisPersonDoestExist profil pic"
+							 width="100">
+					</td>
+				}
 				<td>
 					@m.Id
 				</td>
@@ -56,29 +82,35 @@
 				<td>
 					@m.Realisateur
 				</td>
+
+				@* Gestion du bouton A voir / Vu (visionné) *@
 				<td>
 					@* @m.Statut *@
 					@* <a button id="movie-status" movieSeen="false">xxx</a> *@
 
 					@if (@m.Statut == "À voir")
 					{
-						@* <a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" *@
-						@*    aria-pressed="true">À_voir</a> *@
-
 						<a class="btn btn-success" asp-action="ChangeStatut" asp-route-id="@m.Id">À_voir</a>
-
 					}
 					else
 					{
 						<a class="btn btn-outline-secondary" asp-action="ChangeStatut" asp-route-id="@m.Id">Vu</a>
-						
+
 					}
 				</td>
+
+				@* Gestion du bouton Détails - pas affiché en affichage Liste *@
+				@if (listMode == "List")
+				{
+					<td>
+						<a class="btn btn-primary" asp-action="Details" asp-route-id="@m.Id">Détails</a>
+					</td>
+				}
 				<td>
 					<a class="btn btn-warning" asp-action="Edit" asp-route-id="@m.Id">Editer</a>
 				</td>
 				<td>
-					<a class="btn btn-danger" asp-action="Delete" asp-route-id="@m.Id">Supprimer</a>
+					<a class="btn btn-danger" asp-action="Delete" asp-route-id="@m.Id" onclick="return confirm('Voulez-vous vraiment supprimer le film @m.Nom ?')">Supprimer</a>
 				</td>
 			</tr>
 		}

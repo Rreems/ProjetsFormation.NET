@@ -1,5 +1,6 @@
 using Exo06.Data;
 using Exo06.Models;
+using Exo06.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,7 +27,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IRepository<Movie>, MovieRepository>();
 
+// Gestion de l'upload d'images
+builder.Services.AddScoped<IUploadPictureService, UploadPictureService>();
+builder.Services.AddScoped<IPictureService, PictureService>();
+
+
 builder.Services.AddRouting(option => option.LowercaseQueryStrings=true);
+
+// On ajoute le HashSet en singleton pour le rendre commun pour toutes les requêtes et garder trace des images
+builder.Services.AddSingleton<FakeDb>();
 
 var app = builder.Build();
 

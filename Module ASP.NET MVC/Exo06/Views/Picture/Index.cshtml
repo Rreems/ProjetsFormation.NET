@@ -1,0 +1,32 @@
+﻿@model HashSet<PictureViewModel>
+
+@{
+	ViewData["Title"] = "Liste des images";
+
+
+}
+
+<div class="d-flex">
+    <h1>@ViewData["Title"]</h1>
+    <a asp-action="Create" class="btn btn-success ms-auto">
+        <span class="bi bi-plus-circle"></span> Add
+    </a>
+</div>
+
+
+<hr/>
+
+
+<div class="row">
+    @foreach (var p in Model)
+    {
+        <div class="col-4">
+            <div class="card">
+                <img src="@p.PictureUrl" class="card-img-top" alt="@p.Title">
+                <div class="card-body">
+                    <h5 class="card-title">@p.Title</h5>
+                </div>
+            </div>
+        </div>
+    }
+</div>

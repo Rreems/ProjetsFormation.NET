@@ -12,6 +12,8 @@ public class Movie
     [StringLength(200)]
     public string Nom { get; set; } = "NomDeFilmLambda";
 
+
+
     [Required]
     [Display(Name = "Genre de film")]
     [StringLength(200)]
