@@ -1,11 +1,15 @@
-﻿using Exo06.Data;
+﻿using System.Text.Json;
+using Exo06.Data;
 using Exo06.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Exo06.Controllers;
 
 public class MovieController : Controller
+
 {
+    public const string COOKIE_NAME = "films_favoris";
+
     private readonly IRepository<Movie> _repo;
     public MovieController(IRepository<Movie> repo)
     {
@@ -17,7 +21,29 @@ public class MovieController : Controller
     {
         var movies = _repo.GetAll();
 
-        ViewBag.ListMode = "List";
+        var favoris = new List<string>();
+        // On récupère le cookie...
+        Request.Cookies.TryGetValue(COOKIE_NAME, out string? json);
+
+
+        //HttpContext.Session.TryGetValue(COOKIE_NAME, out byte[]? bytes);
+        // Si on veut vider la session, on peut utiliser cette méthode (en cas de déconnexion par exemple)
+        // HttpContext.Session.Clear();
+
+        if (json != null && json.Length != 0) // Si on a eu un cookie...
+        {
+            // On le désérialise en notre contenu
+            favoris = JsonSerializer.Deserialize<ContactViewModel>(json);
+            //var vm = JsonSerializer.Deserialize<ContactViewModel>(bytes);
+        }
+        else
+        {
+            //
+        }
+
+
+
+            ViewBag.ListMode = "List";
 
         return View("List", movies);
     }

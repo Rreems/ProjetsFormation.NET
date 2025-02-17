@@ -1,0 +1,6 @@
+@Module_API_Rest_HostAddress = http://localhost:5057
+
+GET {{Module_API_Rest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
