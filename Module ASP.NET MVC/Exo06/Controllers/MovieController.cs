@@ -33,7 +33,7 @@ public class MovieController : Controller
         if (json != null && json.Length != 0) // Si on a eu un cookie...
         {
             // On le désérialise en notre contenu
-            favoris = JsonSerializer.Deserialize<ContactViewModel>(json);
+            //favoris = JsonSerializer.Deserialize<ContactViewModel>(json);
             //var vm = JsonSerializer.Deserialize<ContactViewModel>(bytes);
         }
         else

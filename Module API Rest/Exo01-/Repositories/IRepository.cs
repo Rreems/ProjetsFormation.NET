@@ -1,10 +1,15 @@
-﻿namespace Exo01_.Repository;
+﻿using System.Linq.Expressions;
+using Microsoft.OpenApi.Models;
 
-public interface IRepository<T> where T : class
+namespace Exo01_.Repository;
+
+public interface IRepository<T,Tid> where T : class
 {
-    public T Create(T entity);
+    public T Add(T entity);
+    public T? GetById(Tid id);
+    public T? Get(Expression<Func<HamsterRepository, bool>> predicate);
     public IEnumerable<T> GetAll();
-    public T? GetById(int id);
+    public IEnumerable<T> GetAll(Expression<Func<HamsterRepository, bool>> predicate);
     public T? Update(T entity);
     public bool Delete(T entity);
 }

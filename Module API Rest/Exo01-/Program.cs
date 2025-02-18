@@ -1,6 +1,7 @@
 using Exo01_.Data;
 using Exo01_.Entities;
 using Exo01_.Repository;
+using Exo01_.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,11 +15,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("LocalDB"));
 });
-builder.Services.AddScoped<IRepository<Hamster>, HamsterRepository>();
+builder.Services.AddScoped<IRepository<Hamster,int>, HamsterRepository>();
+builder.Services.AddScoped<IHamsterService, HamsterService>();
+
+
 
 
 var app = builder.Build();
