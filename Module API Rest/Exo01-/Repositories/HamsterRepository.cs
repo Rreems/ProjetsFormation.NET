@@ -1,8 +1,10 @@
-﻿using System.Linq.Expressions;
+﻿using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using Exo01_.Data;
 using Exo01_.Entities;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.Swagger;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Exo01_.Repository;
@@ -95,13 +97,6 @@ public class HamsterRepository : IRepository<Hamster, int>
         return true;
     }
 
-    Hamster? IRepository<Hamster, int>.Get(Expression<Func<HamsterRepository, bool>> predicate)
-    {
-        throw new NotImplementedException();
-    }
+    public Hamster? Get(Expression<Func<Hamster, bool>> predicate) => _context.Hamsters.FirstOrDefault(predicate);
 
-    IEnumerable<Hamster> IRepository<Hamster, int>.GetAll(Expression<Func<HamsterRepository, bool>> predicate)
-    {
-        throw new NotImplementedException();
-    }
 }

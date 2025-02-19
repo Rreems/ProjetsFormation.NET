@@ -64,7 +64,7 @@ public class HamsterController : ControllerBase
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public IActionResult GetByLastName(string lastName)
     {
-        Hamster hamster = _service.GetAll(lastName).First();
+        Hamster hamster = _service.GetByLastName(lastName);
 
         if (hamster == null)
             return NotFound(new
