@@ -1,0 +1,6 @@
+@Exo02_R_API_Tatouille_HostAddress = http://localhost:5160
+
+GET {{Exo02_R_API_Tatouille_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

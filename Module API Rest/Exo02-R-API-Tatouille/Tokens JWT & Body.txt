@@ -1,0 +1,47 @@
+Register User:
+{
+  "email": "admin@admin.com",
+  "password": "adminADMIN00!!",
+  "role": "user",
+  "lastName": "Touille",
+  "firstName": "AdminRata"
+}
+
+Register Admin:
+{
+  "email": "admin2@admin2.com",
+  "password": "adminADMIN00!!",
+  "role": "admin",
+  "lastName": "Toto",
+  "firstName": "Rara"
+}
+
+
+-----------------------------------------
+Login Admin:
+{
+  "email": "admin@admin.com",
+  "password": "adminADMIN00!!"
+}
+Token:
+
+Son token:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIlVzZXJJZCI6ImUxYmE2MmFiLTdiOTctNGUzOC05ODI2LWY3ODljYmZhYTUwMCIsImV4cCI6MTc0MTA4NTU0Mn0.mvbnp-TgCtFoQnt19cQe5oEz-t03A8yDWJuVqj6uexQ
+
+
+-----------------------------------------
+Login User:
+{
+  "email": "Poto@pote.com",
+  "password": "bdminADMIN00!!"
+}
+Token:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwiVXNlcklkIjoiMDM2Mjg2Y2MtYjQ4Ni00YmE2LTk3ZWItZTE3MzZkNjBmNjUxIiwiZXhwIjoxNzQxMDg1NjU4fQ.4uS-9sUVbr1JG0zsb4YmQH_QUCFjY3dI2iU6nBpocno
+
+
+
+
+
+
+
+
