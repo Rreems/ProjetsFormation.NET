@@ -1,0 +1,50 @@
+﻿@page "/number-mystery"
+@page "/number-mystery/{EssaisRestants:int}" 
+@page "/{EssaisRestants:int}" 
+ @page "/" 
+
+
+<PageTitle>Nombre mystère - Le Jeu vidéo</PageTitle>
+
+@if(! GameLost && !GameWin){
+
+<img src="/nombre-mystere-gif.gif" alt="Nombre Mystere - le jeu vidéo HD 4K !" height="300" />
+
+<p role="status">Essais restants pour trouver le nombre @NombreMysterieux:  (@EssaisRestants) @EssaisRestantsCoeur</p>
+
+<p>
+    <input @bind="_inputValue" />
+</p>
+
+<button class="btn btn-primary" @onclick="Try">Tester le nombre</button>
+}
+
+@if(GameLost){
+    <div>
+        <pre>
+    ▄▄▄█████▓    ▄▄▄        ██████     ██▓███  ▓█████  ██▀███  ▓█████▄  █    ██ 
+    ▓  ██▒ ▓▒   ▒████▄    ▒██    ▒    ▓██░  ██▒▓█   ▀ ▓██ ▒ ██▒▒██▀ ██▌ ██  ▓██▒
+    ▒ ▓██░ ▒░   ▒██  ▀█▄  ░ ▓██▄      ▓██░ ██▓▒▒███   ▓██ ░▄█ ▒░██   █▌▓██  ▒██░
+    ░ ▓██▓ ░    ░██▄▄▄▄██   ▒   ██▒   ▒██▄█▓▒ ▒▒▓█  ▄ ▒██▀▀█▄  ░▓█▄   ▌▓▓█  ░██░
+      ▒██▒ ░     ▓█   ▓██▒▒██████▒▒   ▒██▒ ░  ░░▒████▒░██▓ ▒██▒░▒████▓ ▒▒█████▓ 
+      ▒ ░░       ▒▒   ▓▒█░▒ ▒▓▒ ▒ ░   ▒▓▒░ ░  ░░░ ▒░ ░░ ▒▓ ░▒▓░ ▒▒▓  ▒ ░▒▓▒ ▒ ▒ 
+        ░         ▒   ▒▒ ░░ ░▒  ░ ░   ░▒ ░      ░ ░  ░  ░▒ ░ ▒░ ░ ▒  ▒ ░░▒░ ░ ░ 
+      ░           ░   ▒   ░  ░  ░     ░░          ░     ░░   ░  ░ ░  ░  ░░░ ░ ░ 
+                      ░  ░      ░                 ░  ░   ░        ░       ░     
+                                                                ░               
+           </pre>
+    </div>
+    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGczb2R3Z3g0dmQzcm05OTJhZGNuMGI2YWY0aDE0azU0azhlMTFsaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3vR4CdLInXOhr3rO/giphy.gif" alt="triste." height="300" />
+
+    <br />
+    <br />
+    <br />
+
+    <button class="btn btn-primary" @onclick="Restart">Rejouter</button>
+    <button class="btn btn-primary" onclick="window.location.href = 'https://donate.wikimedia.org/w/index.php?title=Special:LandingPage&country=FR&uselang=fr&wmf_medium=sidebar&wmf_source=donate&wmf_campaign=fr.wikipedia.org';">Faire plutôt un don à Wikipedia pour combler ton manque de compétences en Math</button>
+}
+
+      
+@if(! GameLost && GameWin){
+    <meta http-equiv="refresh" content="0; url=https://pedantix.certitudes.org/" />
+}
