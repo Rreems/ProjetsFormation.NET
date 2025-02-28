@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: child;
+            src: url(child.ttf);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="text-align: center;">
+        <div
+            style="width: 500px; margin: 0 auto; background: #db5c2a; color: #463434; font-family:child,Comic Sans MS">
+
+            <h1> Super Nombre mystèeeere ! Le Jeu-vidéo 2 (la Revanche du 8)</h1>
+            <h2>Essaie de deviner le nombre mystère, généré aléatoirement entre 1 et 20.</h2>
+            <h2 class="nombreSolution"></h2>
+            <div>
+                <label for="reponse">Réponse:</label>
+                <input type="text" class="reponse">
+            </div>
+
+            <div>
+                <button onclick="validerReponse()">Valider</button>
+            </div>
+
+            <div class="result"></div>
+
+            <button onclick="ResetGame()">Rejouer</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

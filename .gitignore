@@ -400,4 +400,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Sous-dossier partie d'un autre dépot Git pour exercice
-\Module ASP.NET MVC\Exo06\wwwroot\pictures
+Module ASP.NET MVC/Exo06/wwwroot/pictures

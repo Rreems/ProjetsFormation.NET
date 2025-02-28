@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div>
+        <h1>Super boutton qui appelle une fonction</h1>
+        <button onclick="myButtonClick()" onmouseover="myButtonOver()" ondblclick="myButtonDblClick()"> Click here !</button>
+        
+        <br>
+        <button onclick="functionArg(1)"> Bouton 1</button>
+        <button onclick="functionArg(2)"> Bouton 2</button>
+        <button onclick="functionArg(3)"> Bouton 3</button>
+        <button onclick="functionArg(4)"> Bouton 4</button>
+        
+    </br>
+</div>
+<div>
+    <h1> Gestion des events keydown </h1>
+    <input type="text" class="inputText">
+</div>
+
+<div>
+    <h1>Gestion event avec récupération de data-key</h1>
+    <button data-key="Bouton 1">1</button>
+    <button data-key="Bouton 2">2</button>
+    <button data-key="Bouton 3">3</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>

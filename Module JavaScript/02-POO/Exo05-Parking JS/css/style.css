@@ -1,0 +1,64 @@
+.box{
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid rgba(201, 195, 195, 0.5);
+    margin:20px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+ 
+.form{
+    display:flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;  
+}
+ 
+.divButton{
+    padding-top: 10px;
+}
+ 
+ 
+.inputVoiture{
+    width: 100%;
+    border: 1px solid #ccc; /* Bordure fine personnalisée */
+    border-radius: 5px; /* Coins arrondis */
+ 
+}
+ 
+.buttonTicket{
+    width: 100%;
+    background-color: grey;
+    color: white;
+    border :none;
+    border-radius: 5px;
+    padding: 5px; /* Augmente l'épaisseur */
+}
+ 
+.buttonPay{
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 7%;
+    padding: 5px; /* Augmente l'épaisseur */
+}
+
+.divText{
+    
+}
+
+/* Couleurs de la Div informative */
+.backgroundGreen{
+    background-color: greenyellow;
+}
+
+
+.backgroundRed{
+    background-color: rgb(226, 11, 11);
+}
+
+
+.backgroundWhite{
+    background-color: white;
+}
