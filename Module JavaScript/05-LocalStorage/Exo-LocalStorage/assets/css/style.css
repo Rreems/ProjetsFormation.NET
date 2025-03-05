@@ -1,0 +1,20 @@
+.box{
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid rgba(201, 195, 195, 0.5);
+    margin:20px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+ 
+.form{
+    display:flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;  
+}
+ 
+.divButton{
+    padding-top: 10px;
+}
+ 
