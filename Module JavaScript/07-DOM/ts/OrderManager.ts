@@ -15,8 +15,8 @@ export class OrderManager {
 
 
     updateOrderStatus(id: string, status: "en attente" | "expédiée" | "livrée"): void { //met à jour le statut de la commande correspondante.
-        let order = this.orders.find((order) => order.id == id);
-        order.status = Status[status]
+        let order = this.getOrderById(id);
+        if(order) order.status = Status[status]
     }
 
     listOrdersByStatus(status: 'en attente' | 'expédiée' | 'livrée'): Order[] { //retourne toutes les commandes ayant le statut spécifié.

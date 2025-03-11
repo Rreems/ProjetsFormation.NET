@@ -21,7 +21,7 @@ export interface Order{
     id: string
     customer: Customer
     items: OrderItem[]
-    status: Status
+    status: Status  //  ou: "en attente" | "expédiée" | "livrée"
 }
 
 export enum Status {
