@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exo04_.Pages.PenduPage"
+             Title="PenduPage">
+
+
+    <Grid HorizontalOptions="Center" Padding="5" RowDefinitions="2*, 6*, 3*, 8*" RowSpacing="10">
+        <VerticalStackLayout Grid.Row="0">
+            <Label FontSize="30" Text="Hangman Game" HorizontalTextAlignment="Center" />
+            <Label FontSize="18" Text="Errors: 0/7" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+
+        <Image Grid.Row="1" Source="hangman_01.png" />
+
+        <VerticalStackLayout Grid.Row="2">
+            <Label Text="You lost!" FontSize="20" HorizontalTextAlignment="Center"/>
+            <Button Text="Retry?" FontSize="24" Margin="0, 10, 0, 0" HorizontalOptions="Center" BackgroundColor="OrangeRed" FontAttributes="Bold" Clicked="ButtonRetry_Clicked"/>
+        </VerticalStackLayout>
+
+        <FlexLayout Grid.Row="3" BindableLayout.ItemsSource="{Binding Alphabet}" Wrap="Wrap" JustifyContent="SpaceEvenly" x:Name="flexLayoutButton">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Button x:Name="btnLetter" Text="{Binding .}" HeightRequest="50" WidthRequest="50" 
+                            BackgroundColor="OrangeRed" FontAttributes="Bold" Clicked="btnLetter_Clicked"
+                            IsEnabled="true" />
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+
+    </Grid>
+
+</ContentPage>

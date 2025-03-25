@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exo01.Layout.DemoAbsoluteLayout"
+             Title="DemoAbsoluteLayout">
+    <AbsoluteLayout Background="LightGreen">
+        <Label Text="Label A" BackgroundColor="Brown" FlexLayout.Grow="2"></Label>
+        <Label BackgroundColor="DarkRed" Text="Label B"  FlexLayout.Grow="1"></Label>
+        <Label Text="Label C"></Label>
+        <Label Text="Label D"></Label>
+        <Label Text="Label E"></Label>
+
+        <Button Text="Clic svp" 
+                AbsoluteLayout.LayoutBounds="500,200,100,220">
+            
+        </Button>
+    </AbsoluteLayout>
+</ContentPage>

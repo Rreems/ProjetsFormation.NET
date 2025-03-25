@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exo01.Layout.DemoStackLayout"
+             Title="DemoStackLayout">
+
+    <!--<StackLayout 
+        Orientation="Horizontal" 
+        Spacing="20"
+        BackgroundColor="DarkGreen"
+        HorizontalOptions="CenterAndExpand">
+        <Label Text="Label A"></Label>
+        <Label Text="Label B"></Label>
+        <Label Text="Label C"></Label>
+    </StackLayout>-->
+
+    <VerticalStackLayout BackgroundColor="Green" >
+        <Label 
+            FontFamily="Verdana"
+            FontSize="25"
+            TextDecorations="Underline"
+            HorizontalOptions="Start"
+            Text="Label A"></Label>
+        <Label Text="Label B"></Label>
+        <Label Text="Label C"></Label>
+
+        <Ellipse HeightRequest="50" WidthRequest="40" 
+                 BackgroundColor="Red"
+                 Stroke="AliceBlue"
+                 StrokeThickness="15">
+        </Ellipse>
+
+        <Rectangle HeightRequest="50" WidthRequest="240" 
+                 BackgroundColor="BlueViolet"
+                 Stroke="AliceBlue">
+        </Rectangle>
+
+        <Frame HorizontalOptions="Center"
+               CornerRadius="20"
+               BorderColor="Blue"
+               BackgroundColor="Transparent"
+               Margin="20,10,5,10"
+               Padding="10,10,20,20">
+            <Label x:Name="displayLabel" Text="Je suis dans une frame !"></Label>
+        </Frame>
+
+        <Image Source="dotnetbot.png" HeightRequest="100" WidthRequest="100"></Image>
+
+        <Entry x:Name="entryA"
+            Keyboard="Text" Placeholder="Texte ici" 
+               BackgroundColor="BlanchedAlmond" TextColor="Black"
+               Completed="entryA_Completed"></Entry>
+
+        <Button x:Name="myButton" Text="Cliquez donc !"
+                Clicked="myButton_Clicked"></Button>
+
+        <CheckBox
+            x:Name="maCheckbox"
+            IsChecked="True" CheckedChanged="maCheckbox_CheckedChanged" />
+
+        <Switch x:Name="leSwitch"
+                IsToggled="false"
+                Toggled="leSwitch_Toggled"
+            />
+
+
+        <Slider x:Name="leSlider" Minimum="10" Maximum="100" Value="25" 
+                MinimumTrackColor="DarkRed" MaximumTrackColor="Aquamarine"
+                ThumbColor="DarkSeaGreen"
+                ValueChanged="leSlider_ValueChanged"/>
+
+        <Stepper x:Name="leStepper" Minimum="0" Maximum="30" Increment="5" Value="10" ValueChanged="leStepper_ValueChanged" />
+        <DatePicker x:Name="maDatePicker" DateSelected="maDatePicker_DateSelected" />
+        <TimePicker x:Name="leTimePicker" />
+
+    </VerticalStackLayout>
+
+
+            <!--<HorizontalStackLayout>
+        <Label Text="Label A"></Label>
+        <Label Text="Label B"></Label>
+        <Label Text="Label C"></Label>
+        <Label Text="Label D"></Label>
+        <Label Text="Label E"></Label>
+    </HorizontalStackLayout>-->
+</ContentPage>

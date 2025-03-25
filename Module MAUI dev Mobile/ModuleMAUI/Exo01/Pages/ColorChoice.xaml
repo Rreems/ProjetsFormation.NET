@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exo01.Pages.ColorChoice"
+             Title="ColorChoice"
+             x:Name="contentPage"
+             BackgroundColor="White">
+
+    <Grid>
+
+        <Frame VerticalOptions="Center"
+               CornerRadius="20"
+               BackgroundColor="White"
+               Margin="60,50"
+               Padding="10,10,20,20">
+            <VerticalStackLayout>
+
+                <Label x:Name="coloMakerLabel" 
+                   Text="Color Maker" 
+                   FontSize="30" TextColor="Black" 
+                   HorizontalTextAlignment="Center" />
+
+                <Label x:Name="redLabel"
+                   TextColor="Black"
+                   Text="Red value: 0" />
+
+                <Slider x:Name="redSlider" Minimum="0" Maximum="255" Value="255" 
+                    MinimumTrackColor="Orange" 
+                ThumbColor="Red"
+                ValueChanged="redSlider_ValueChanged"/>
+
+
+                <Label x:Name="greenLabel" Text="Green value: 255" TextColor="Black"></Label>
+                <Slider x:Name="greenSlider" Minimum="0" Maximum="255" Value="255" 
+                    MinimumTrackColor="Orange" 
+                ThumbColor="Green"
+                ValueChanged="greenSlider_ValueChanged"/>
+
+
+                <Label x:Name="blueLabel" Text="Blue value: 255" TextColor="Black"></Label>
+                <Slider x:Name="blueSlider" Minimum="0" Maximum="255" Value="255" 
+                    MinimumTrackColor="Orange" 
+                ThumbColor="DodgerBlue"
+                ValueChanged="blueSlider_ValueChanged"/>
+
+                <Frame HorizontalOptions="Center"
+               CornerRadius="20"
+               BackgroundColor="White"
+               Margin="20,10,20,10"
+               Padding="10,10,20,20">
+
+                    <HorizontalStackLayout>
+                        <Label x:Name="hexLabel" Text="HEX Value #000000" TextColor="Black"></Label>
+                        <Rectangle  x:Name="rectangleColor"
+                        BackgroundColor="White"
+                        HeightRequest="20" WidthRequest="20"
+                        Stroke="Black"
+                        StrokeThickness="3" />
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Button x:Name="randomColorButton" 
+                    Text="Generate Random Color" 
+                    Clicked="randomColorButton_Clicked" 
+                    TextColor="Wheat"
+                    BackgroundColor="DarkRed"/>
+
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+
+
+</ContentPage>

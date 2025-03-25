@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "id": "4f7c",
+      "name": "Comté 400g",
+      "description": "Une belle tranche de Comté 6-8mois, bien goûtu.",
+      "price": 15.5
+    },
+    {
+      "id": "f9dd",
+      "name": "St Marcelin",
+      "description": "200g crémeux et affiné à souhait.",
+      "price": 4.85
+    },
+    {
+      "id": "b5dd",
+      "name": "Beaufort en tranche",
+      "description": "600g, Beaufort d'Été des alpages.",
+      "price": 12.15
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exo03_.Pages.CitationPage"
+             Title="CitationPage">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Name="LinearBrush">
+            <GradientStop Color="AntiqueWhite" Offset="0.1" x:Name="GradientStop1" />
+            <GradientStop Color="Black" Offset="1.0" x:Name="GradientStop2" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+
+    <Grid RowDefinitions="4*, *" 
+          RowSpacing="10" ColumnSpacing="10">
+
+
+        <VerticalStackLayout Grid.Row="0" Grid.Column="1" 
+                             BackgroundColor="Transparent"
+                             VerticalOptions="Center"
+                             Margin="30,0">
+            <Label Text="Saaaaaaaaaaaaaaalut" 
+               x:Name="QuoteLabel"
+               FontFamily="Bison-Bold"
+               FontSize="60"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"></Label>
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="2" Grid.Column="1" >
+            <Button x:Name="AnotherQuoteButton"
+                Text="Get another quote ?"
+                    BackgroundColor="#1e1e1e"
+                    TextColor="White"
+                    FontSize="28"
+                    Margin="30,0"
+                    Padding="25"
+                    Clicked="AnotherQuoteButton_Clicked"/>
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exo02_Pourboires.Pages.PourboirePage"
+             Title="PourboirePage" BackgroundColor= "#323232">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color  x:Key="GoodGrey"  >#444444</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout
+        HorizontalOptions="Center"
+        Margin="50,10" >
+
+        <Frame VerticalOptions="Center"
+               CornerRadius="20"
+               BackgroundColor="{StaticResource GoodGrey}"
+               Margin="60,50"
+               Padding="10,10,20,20">
+            <VerticalStackLayout>
+                <Label Text="TOTAL PAR PERSONNE" TextColor="#4cbecc" HorizontalOptions="Center"></Label>
+
+                <HorizontalStackLayout>
+                    <Label x:Name="facturePersonnelleLabel"
+                           Text="0 €" 
+                           FontSize="30" 
+                           TextColor="#dadada"
+                           VerticalOptions="Center"
+                           Margin="20"
+                           ></Label>
+
+                    <Rectangle Fill="#dadada" 
+                               HeightRequest="140" WidthRequest="4" ></Rectangle>
+
+                    <VerticalStackLayout  Margin="20">
+                        <VerticalStackLayout Margin="0,10">
+                            <Label Text="Sous-total avec Pourboire"></Label>
+                            <Label x:Name="sousTotalValueLabel"
+                                Text="0 €"></Label>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Margin="0,10">
+                            <Label Text="Pourboire"></Label>
+                            <Label x:Name="pourboireValueLabel"
+                                Text="10 %"></Label>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <VerticalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   Margin="0,10">
+                <Label Text="Total de la facture (€) :" 
+                       TextColor="#dadada"
+                       VerticalTextAlignment="Center"></Label>
+                <Entry x:Name="factureValueEntry"
+                    TextColor="#a5a5a5" 
+                       Background="{StaticResource GoodGrey}" 
+                       Placeholder="Entrez montant de la facture"
+                       TextChanged="factureValueEntry_TextChanged" 
+                       WidthRequest="260"/>
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout VerticalOptions="Center"  
+                                   HorizontalOptions="Center"
+                                   Margin="0,10">
+                <Label Text="Taux pourboire (%) :" 
+                       TextColor="#dadada"
+                       VerticalTextAlignment="Center"></Label>
+
+                <Button x:Name="DixPourboireButton"
+                        BackgroundColor="#502bd4" 
+                        Text="10%"
+                        TextColor="#dadada"
+                        Clicked="DixPourboireButton_Clicked"
+                        Margin="10,0"></Button>
+
+                <Button x:Name="QuinzePourboireButton"
+                        BackgroundColor="#502bd4" 
+                        Text="15%"
+                        TextColor="#dadada"
+                        Clicked="QuinzePourboireButton_Clicked"
+                        Margin="10,0"></Button>
+
+                <Button x:Name="VingtPourboireButton"
+                        BackgroundColor="#502bd4" 
+                        Text="20%"
+                        TextColor="#dadada"
+                        Clicked="VingtPourboireButton_Clicked"
+                        Margin="10,0"></Button>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   Margin="0,10">
+                <Label x:Name="pouboireSliderLabel"
+                    Text="Pourboire (%) :" 
+                       TextColor="#dadada"
+                       VerticalTextAlignment="Center"/>
+                <Slider x:Name="pourboireSlider" 
+                        Minimum="0" Maximum="30" Value="20" 
+                        MinimumTrackColor="#502bd4"
+                        MaximumTrackColor="Black"
+                        ThumbColor="#502bd4"
+                        HorizontalOptions="FillAndExpand"
+                        WidthRequest="200"
+                        ValueChanged="pourboireSlider_ValueChanged"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   Margin="0,10">
+                <Label Text="Partager le total entre:" 
+                       TextColor="#dadada"
+                       VerticalTextAlignment="Center"/>
+
+                <Button Text="-"
+                        x:Name="removePersonneButton"
+                        TextColor="#dadada"
+                        FontSize="20"
+                        BackgroundColor="#502bd4"
+                        Margin="10,0"
+                        Clicked="removePersonneButton_Clicked"
+                        ></Button>
+                <Frame BackgroundColor="{StaticResource GoodGrey}"
+                       WidthRequest="80">
+                    <Label x:Name="nomberPersonneLabel"
+                        Text="1" 
+                         HorizontalOptions="Center"
+                           />
+                </Frame>
+                
+                <Button Text="+"
+                        x:Name="addPersonneButton"
+                        TextColor="#dadada"
+                        FontSize="20"
+                        BackgroundColor="#502bd4"
+                        Margin="10,0"
+                        Clicked="addPersonneButton_Clicked"
+                        ></Button>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>

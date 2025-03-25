@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exo01.Layout.DemoGridLayout"
+             Title="DemoGridLayout">
+    
+    
+    <Grid RowDefinitions="50,*,2*,*,*,*" ColumnDefinitions="100,*">
+        <Label Grid.Row="0" Grid.Column="0" BackgroundColor="BurlyWood" Text="Label 0"></Label>
+        <Label Grid.Row="1" Grid.Column="1" BackgroundColor="PaleVioletRed" Text="Label A"></Label>
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  BackgroundColor="OrangeRed"  Text="Label B"></Label>
+        <Label  Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="10"  BackgroundColor="CadetBlue"  Text="Label C"></Label>
+        <!--<Label Text="Label D"></Label>-->
+        <!--<Label Text="Label E"></Label>
+        <Label Text="Label F"></Label>-->
+    </Grid>
+</ContentPage>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exo01.Layout.DemoFlexLayout"
+             Title="DemoFlexLayout"
+             BackgroundColor="LightCoral">
+
+
+
+    <!--<FlexLayout Direction="RowReverse"  JustifyContent="SpaceAround" AlignContent="Center" Wrap="Wrap">-->
+    <FlexLayout  JustifyContent="SpaceAround" AlignContent="Center" >
+        <Label Text="Label A" BackgroundColor="Brown" FlexLayout.Grow="2"></Label>
+        <Label BackgroundColor="DarkRed" Text="Label B"  FlexLayout.Grow="1"></Label>
+        <Label Text="Label C"></Label>
+        <Label Text="Label D"></Label>
+        <Label Text="Label E"></Label>
+    </FlexLayout>
+    
+    
+</ContentPage>
