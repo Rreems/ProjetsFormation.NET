@@ -1,0 +1,29 @@
+services:
+  # mysql-server:
+  #   container_name: mysql-server
+  #   image: mysql:9
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root-password
+  #     MYSQL_DATABASE: testdb
+  #     MYSQL_USER: user
+  #     MYSQL_PASSWORD: user-password
+  #   ports:
+  #     - 3306:3306
+  #     # - "33060:33060"
+  #   volumes:
+  #     - data:/var/lib/mysql
+  myDebian1:
+    container_name: myBebian1
+    image: debian
+    ports: 
+      - 80:80
+    stdin_open: true # -i
+    tty: true # -t
+
+  myDebian2:
+    container_name: myBebian2
+    image: debian
+    ports: 
+      - 81:80
+    stdin_open: true # -i
+    tty: true # -t
