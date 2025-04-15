@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo02efcore\\ui\\mainui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|solutionrelative:exo02efcore\\ui\\mainui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo02efcore\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|solutionrelative:exo02efcore\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo02efcore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|solutionrelative:exo02efcore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo02efcore\\models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|solutionrelative:exo02efcore\\models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo02efcore\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|solutionrelative:exo02efcore\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo02efcore\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|solutionrelative:exo02efcore\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo02efcore\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|solutionrelative:exo02efcore\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|c:\\users\\administrateur\\documents\\dossiertravail\\module entityframeworkcore\\entityframeworkcore\\exo02efcore\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB3EEB-E970-42C6-BA40-A0F239EB9A75}|Exo02EFCore\\Exo02EFCore.csproj|solutionrelative:exo02efcore\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 22,
           "Children": [
             {
               "$type": "Bookmark",
@@ -114,67 +106,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainUI.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\UI\\MainUI.cs",
-              "RelativeDocumentMoniker": "Exo02EFCore\\UI\\MainUI.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\UI\\MainUI.cs",
-              "RelativeToolTip": "Exo02EFCore\\UI\\MainUI.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Models\\Reservation.cs",
+              "RelativeDocumentMoniker": "Exo02EFCore\\Models\\Reservation.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Models\\Reservation.cs",
+              "RelativeToolTip": "Exo02EFCore\\Models\\Reservation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T08:51:37.998Z",
+              "WhenOpened": "2025-04-03T14:07:17.711Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Program.cs",
-              "RelativeDocumentMoniker": "Exo02EFCore\\Program.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Program.cs",
-              "RelativeToolTip": "Exo02EFCore\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Title": "Hotel.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Models\\Hotel.cs",
+              "RelativeDocumentMoniker": "Exo02EFCore\\Models\\Hotel.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Models\\Hotel.cs",
+              "RelativeToolTip": "Exo02EFCore\\Models\\Hotel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T08:51:33.732Z",
+              "WhenOpened": "2025-04-03T14:07:17.074Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClientRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Repositories\\ClientRepository.cs",
-              "RelativeDocumentMoniker": "Exo02EFCore\\Repositories\\ClientRepository.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Repositories\\ClientRepository.cs",
-              "RelativeToolTip": "Exo02EFCore\\Repositories\\ClientRepository.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAiwDIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "Exo02EFCore\\Models\\Client.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Models\\Client.cs",
+              "RelativeToolTip": "Exo02EFCore\\Models\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T11:24:19.359Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Repositories\\IRepository.cs",
-              "RelativeDocumentMoniker": "Exo02EFCore\\Repositories\\IRepository.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Repositories\\IRepository.cs",
-              "RelativeToolTip": "Exo02EFCore\\Repositories\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T11:23:45.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Exo02EFCore\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Documents\\DossierTravail\\Module EntityFrameworkCore\\EntityFrameworkCore\\Exo02EFCore\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Exo02EFCore\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T11:07:51.862Z",
+              "WhenOpened": "2025-04-03T14:05:26.302Z",
               "EditorCaption": ""
             }
           ]
