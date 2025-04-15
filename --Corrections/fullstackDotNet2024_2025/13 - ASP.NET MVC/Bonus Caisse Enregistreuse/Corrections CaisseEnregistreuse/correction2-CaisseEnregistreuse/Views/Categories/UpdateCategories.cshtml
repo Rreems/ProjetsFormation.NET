@@ -1,0 +1,23 @@
+﻿@model Categorie
+@{
+    ViewData["Title"] = "Ajout d'une Catégorie";
+}
+
+<h1>@(Model == null ? "Ajout" : "Modification") d'une catégorie</h1>
+
+
+<form asp-action="SubmitCategorie" asp-controller="Categories">
+    <div class="text-danger">@Html.ValidationSummary()</div>
+    <input asp-for="Id" type="text" class="form-control" hidden>
+    @*
+    On met l'Id dans le formulaire en cas de modification
+    pour pouvoir l'envoyer à notre action Submit
+    Ainsi, dans l'action Submit, on saura si on cherche à modifier ou ajouter un contact
+    *@
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" type="text" class="form-control">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

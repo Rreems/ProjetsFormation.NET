@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.Learning.Styling.Pages.StartPage"
+             Title="StartPage">
+
+    <VerticalStackLayout>
+        <VerticalStackLayout>
+            <VerticalStackLayout.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Button">
+                        <Setter Property="BackgroundColor" Value="DarkRed" />
+                        <Setter Property="TextColor" Value="White" />
+                        <Setter Property="FontAttributes" Value="Bold" />
+                        <Setter Property="Padding" Value="20, 10" />
+                    </Style>
+
+                    <Style x:Key="BlueButton" TargetType="Button">
+                        <Setter Property="BackgroundColor" Value="LightBlue" />
+                        <Setter Property="TextColor" Value="Black" />
+                        <Setter Property="FontAttributes" Value="None" />
+                        <Setter Property="Padding" Value="20, 10" />
+                    </Style>
+                </ResourceDictionary>
+            </VerticalStackLayout.Resources>
+            <Button Text="Button A" BackgroundColor="Green" />
+            <Button Text="Button B" Style="{StaticResource BlueButton}" />
+            <Button Text="Button B-bis" Style="{StaticResource BlueButton}" />
+            <Button Text="Button C" />
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <Button Text="Button D" Style="{StaticResource DarkModeButton}" />
+            <Button Text="Button E" Style="{StaticResource OrangeButton}" />
+            <Button Text="Button F" />
+            <Button Text="Button G" />
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <Label Text="Label A" StyleClass="Title, GreenLabel" />
+            <Label Text="Label B" StyleClass="Heading, BlueLabel" />
+            <Label Text="Label C" StyleClass="BlueLabel" />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

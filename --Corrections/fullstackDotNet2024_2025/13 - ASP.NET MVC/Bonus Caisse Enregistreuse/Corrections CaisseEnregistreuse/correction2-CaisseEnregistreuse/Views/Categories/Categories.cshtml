@@ -1,0 +1,29 @@
+﻿@model List<Categorie>
+@{
+    ViewData["Title"] = "Bienvenue !";
+}
+
+<a asp-action="FormulaireAjout" class="btn btn-primary" asp-controller="Categories" >Ajouter</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">@Html.DisplayNameForInnerType((Categorie cat) => cat.Name)</th>
+            <th scope="col">Supprimer la tâche</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Categorie cat in Model)
+        {
+            <tr>
+                <th scope="row">@cat.Id</th>
+                <td>@cat.Name</td>
+                <td>
+                    <a asp-action="CategorieDetails" class="btn btn-primary" asp-controller="Categories" asp-route-id="@cat.Id">Détails</a>
+                    <a asp-action="Delete" class="btn btn-danger" asp-controller="Categories" asp-route-id="@cat.Id">Supprimer</a>
+                    <a asp-action="UpdateCategories" asp-controller="Categories" asp-route-id="@cat.Id" class="btn btn-warning">Modifier</a>
+
+                </td>
+            </tr>
+        }

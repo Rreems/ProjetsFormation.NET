@@ -1,0 +1,24 @@
+﻿@model Produit
+@{
+    // Contact c = (Contact)ViewData["contact"];
+    //Contact c = ViewBag.Contact;
+    Produit p = Model;
+    ViewData["Title"] = $"Détails du produit {@p.Nom}";
+}
+<p>Détails du produit : </p>
+
+<div class="card m-2 p-2" style="width: 500px;">
+    <div class="card-title text-center"><h5>@p.Nom</h5> </div>
+    <div class="card-body">
+        <img alt="@p.Nom" src="@p.ImagePath" class="img-thumbnail" />
+        <p>@p.Description</p>
+        <p>@p.Prix €</p>
+        <p>@p.QteEnStock unités en stock</p>
+        <p>Catégorie : @p.Categorie.Nom </p>
+    </div>
+    <div class="card-body">
+        @*[bouton - action:diminuer] [@qtepanier] [bouton + action:augmenter]*@
+        <p><a asp-action="AjouterAuPanier" asp-controller="Home" asp-route-id="@p.Id" class="text-primary panier">Ajouter au panier</a></p>
+        <p><a asp-action="ModifierProduit" asp-controller="Home" asp-route-id=@p.Id class="text-success editer">Éditer le produit</a></p>
+        <p><a asp-action="DeleteProduit" asp-controller="Home" asp-route-id=@p.Id class="text-danger supprimer">Supprimer le produit</a></p>
+    </div>

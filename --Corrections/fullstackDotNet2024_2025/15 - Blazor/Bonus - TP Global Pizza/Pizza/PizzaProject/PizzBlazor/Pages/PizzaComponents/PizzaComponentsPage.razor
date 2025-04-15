@@ -1,0 +1,98 @@
+﻿@page "/pizzacomponents"
+@using System.Globalization
+@using PizzBlazor.DTOs
+@using System.Text.RegularExpressions
+
+<div class="container-fluid">
+    <h3>Pizzas</h3>
+    <div class="row text-center">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="admin" @bind="IsAdminMode" />
+            <label class="custom-control-label" for="admin">Mode admin</label>
+        </div>
+    </div>
+    @if (IsAdminMode)
+    {
+        <div class="row">
+            <button class="btn btn-success" @onclick="AddPizza"><i class="bi bi-plus-square"></i>&ensp; Ajouter une Pizza</button>
+        </div>
+        <PizzaForm CallbackReload="Reload"
+                   EditionMode="EditionMode"
+                   PizzaToEdit="PizzaToEdit" />
+    }
+    <div class="row">
+        <div class="col-8">
+            @if (Loading)
+            {
+                <img alt="loading gif" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdThjMzN6MGxraDYydnpicGRzZ2tianM4ZzFscnhjcDk1dzkxeXo3aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8Ajc7LGGMYssG3Xwlm/giphy.gif" />
+            }
+            @foreach (var pizza in PizzaList)
+            {
+                <PizzaDisplay Pizza="pizza"
+                              IsAdminMode="IsAdminMode"
+                              CallbackAddToCart="AddToCart"
+                              CallbackEditPizza="EditPizza"
+                              CallbackDeletePizza="DeletePizza" />
+            }
+        </div>
+        <PizzaCart Cart="Cart" />
+    </div>
+</div>
+
+
+@code {
+    [Inject]
+    public IPizzaService PizzaService { get; set; }
+    private bool IsAdminMode { get; set; }
+    private bool Loading { get; set; }
+    private Dictionary<Pizza, int> Cart { get; set; } = new Dictionary<Pizza, int>();
+    private List<Pizza> PizzaList { get; set; } = new();
+    private PizzaEditDTO? PizzaToEdit { get; set; } = null; // la pizza que l'on cherche à modifier ou ajouter
+    private EditionModes EditionMode { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        Loading = true;
+        PizzaList = await PizzaService.GetAll();
+        Loading = false;
+    }
+    private void AddToCart(Pizza pizza)
+    {
+        if (Cart.ContainsKey(pizza))
+            Cart[pizza]++; // on augmente le nombre de pizzas
+        else
+            Cart.Add(pizza, 1); // on ajoute la nouvelle pizza 1 fois
+    }
+    private void EditPizza(Pizza pizza)
+    {
+        PizzaToEdit = new PizzaEditDTO()
+            {
+                Id = pizza.Id,
+                IngredientsString = string.Join(",", pizza.Ingredients!),
+                Name = pizza.Name,
+                Price = pizza.Price,
+                ImageLink = Regex.Split(pizza.ImageLink!, @"https:\/\/localhost:\d{1,4}").Last() // pour éviter d'avoir un lien commençant par http://localhost:XXXX => si on déploie l'application elle ne sera plus sur localhost
+            };
+        EditionMode = EditionModes.Put;
+    }
+    private void AddPizza()
+    {
+        PizzaToEdit = new PizzaEditDTO();
+        EditionMode = EditionModes.Post;
+    }
+    private async Task DeletePizza(int id)
+    {
+        PizzaList.RemoveAll(p => p.Id == id);
+        await PizzaService.Delete(id);
+        // await Reload();
+    }
+    public async Task Reload() // possible de l'appeller dans un bouton de mise à jour de l'interface
+    {
+        Loading = true;
+        PizzaList = await PizzaService.GetAll();
+        Loading = false;
+
+        PizzaToEdit = null;
+
+        StateHasChanged();
+    }
+}

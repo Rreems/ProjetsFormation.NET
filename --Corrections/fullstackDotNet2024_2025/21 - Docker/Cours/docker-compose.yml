@@ -1,0 +1,18 @@
+services:
+  node-scripts:
+    container_name: node-util
+    build: mes-scripts-js
+    tty: true
+    stdin_open: true
+  
+  react-app:
+    container_name: react-app
+    build: mon-app-react
+    ports:
+      - 8080:80
+
+  mon-site:
+    container_name: website
+    build: mon-site
+    ports:
+      - 8090:80

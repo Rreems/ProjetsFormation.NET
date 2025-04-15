@@ -1,0 +1,28 @@
+﻿@model Marmoset
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Marmoset Details";
+}
+
+	<div class="row">
+		<div class="col col-md-6 offset-md-3">
+
+<head>
+	<h2>Marmoset #@Model.Id</h2>
+	<hr />
+</head>
+<body>
+	<ul>
+		<li><b>@Html.DisplayNameFor(m => m.Id)</b> : @Model.Id</li>
+		<li><b>@Html.DisplayNameFor(m => m.Name)</b> : @Model.Name</li>
+		<li><b>@Html.DisplayNameFor(m => m.Color)</b> : @Model.Color</li>
+		<li><b>@Html.DisplayNameFor(m => m.Age)</b> : @Model.Age</li>
+</ul>
+	<div class="d-flex">
+		<a class="ms-auto btn btn-secondary" asp-action="List"><span class="bi bi-arrow-counterclockwise"></span> Return to listing</a>
+	</div>
+</body>
+		</div>
+	</div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.Learning.DataBinding.Pages.DemoPropertyChangedPage"
+             Title="DemoPropertyChangedPage">
+    <Grid ColumnDefinitions="*, 5, *">
+        <Entry Grid.Column="0" Text="{Binding Text}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+        <Rectangle Grid.Column="1" Fill="Black" />
+        <Label Grid.Column="2" Text="{Binding Text}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+    </Grid>
+</ContentPage>

@@ -1,0 +1,2 @@
+# Créer un conteneur de type 'nginx' en liant son dossier /usr/share/nginx/html à notre dossier de travail, de sorte à pouvoir développer en direct
+docker run -d -p 80:80 -v "C:\Users\Administrateur\Desktop\fullstackDotNet2024_2025\21 - Docker\Exercices\exercice04:/usr/share/nginx/html" --name dev-nginx nginx

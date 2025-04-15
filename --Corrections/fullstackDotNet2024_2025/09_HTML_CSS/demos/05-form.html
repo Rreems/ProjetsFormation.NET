@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+</head>
+<body>
+    <h1>Formulaires</h1>
+
+    <!-- action: endroit où on envoie le formulaire -->
+    <form action="" method="get">
+        <!-- Champ de type texte -->
+        <label for="firstname">Prénom</label>
+        <!-- On peut ajouter des attributs pour rajouter des comportements aux champs -->
+        <input name="firstname" type="text" id="firstname" required value="Jean">
+
+        <!-- Le label permet de lier le texte à l'input à l'aide de l'id -->
+        <label for="lastname">Nom</label>
+        <input type="text" id="lastname" placeholder="saisir nom">
+
+        <hr>
+
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password" required>
+
+        <hr>
+
+        <fieldset>
+            <legend>Genre</legend>
+            <label for="mr">mr</label>
+            <input type="radio" name="gender" id="mr" value="mr">
+            <label for="mr">mme</label>
+            <input type="radio" name="gender" id="mme" value="mme">
+            <label for="mr">non genré</label>
+            <input type="radio" name="gender" id="none" value="non genré">
+        </fieldset>
+
+        <hr>
+
+        <label for="city">Sélection de ville</label>
+        <select name="city" id="city">
+            <option value="Lille">Lille</option>
+            <!-- L'attribut selected permet de sélectionner le choix par défaut -->
+            <option value="Arras" selected>Arras</option>
+            <option value="Paris">Paris</option>
+        </select>
+
+        <hr>
+
+        <label for="CGV">Accepter les conditions de ventes</label>
+        <input type="checkbox" name="CGV" id="CGV" value="true">
+
+
+        <hr>
+        <button type="submit">Enregistrer</button>
+
+        <!-- ?firstname=Jean&password=toto123&gender=mr&city=Arras&CGV=on -->
+    </form>
+</body>
+</html>

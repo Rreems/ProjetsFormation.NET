@@ -1,0 +1,79 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+html {
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: ;
+}
+
+a {
+    text-decoration: none;
+    color: #17a2b8;
+}
+
+    a:hover, a:focus {
+
+        color: #117a8b;
+    }
+
+.prix {
+    box-sizing: border-box;
+    position: relative;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.supprimer:before {
+    font-family: 'Bootstrap-icons';
+    content: '\F78B';
+    color: var(--text-danger);
+    vertical-align: -.130em;
+    margin-right: 5px;
+}
+
+.editer:before {
+    font-family: 'Bootstrap-icons';
+    content: '\F4CB';
+    color: var(--text-success);
+    vertical-align: -.130em;
+    margin-right: 5px;
+}
+
+.voir:before {
+    font-family: 'Bootstrap-icons';
+    content: '\F341';
+    color: var(--text-info);
+    vertical-align: -.130em;
+    margin-right: 5px;
+}
+
+
+.panier:before {
+    font-family: 'Bootstrap-icons';
+    content: '\F242';
+    color: var(--text-primary);
+    vertical-align: -.130em;
+    margin-right: 5px;
+}

@@ -1,0 +1,84 @@
+﻿@*
+    @model permet de "lier" la page razor avec un type de model
+    le model qui lui sera envoyé depuis un controlleur sera de ce type
+    (de base le type de Model est dynamic sans @model)
+*@
+@model List<string>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    // commentaire C# classique
+    // string message = "Bienvenue sur la page Index de Home!";
+    string message = (string) ViewData["message"];
+    bool test = false;
+    // var strings = new List<string>()
+    // {
+    //     "chaine1",
+    //     "chaine2",
+    //     "chaine3",
+    // };
+
+    ViewData["chaines"] = ViewData["chaines"] ?? new List<string>() { "valeur par défaut car liste Chaines vide" };
+    ViewBag.Chaines = ViewBag.Chaines ?? new List<string>() { "valeur par défaut car liste Chaines vide" };
+    // Model = Model ?? new List<string>() { "valeur par défaut car liste Chaines vide" }; // Model en lecture seule
+}
+
+<!-- Commentaire html, visible dans le code source HTML sur le navigateur (devtools)-->
+@* Commentaire Razor, visible uniquement dans le fichier cshtml, pas sur le navigateur *@
+
+
+<h3>@message</h3>
+
+
+@if (test)
+{
+    <div>test est vrai</div>
+}
+else
+{
+    <div>@nameof(test) est faux</div>
+}
+
+
+@* @foreach (var str in strings) *@
+@* @foreach (var str in (List<string>) ViewData["chaines"]) *@
+@* @foreach (var str in (List<string>) ViewBag.Chaines) *@
+@foreach (var str in Model)
+{
+    // var str2 = "test"; // on est dans un bloc {} donc plusieurs stntaxes du C# sont valables
+    <h5>@str</h5>
+}
+
+
+var test = 5; @* du texte html*@
+
+<br>
+
+@* Anchors en Razor *@
+
+@* /Home/Privacy *@
+
+@*Html Helpers*@
+@Html.ActionLink("Cliquez ici !!", "Privacy")
+
+@*Tag Helpers*@
+<a asp-action="Privacy" class="btn btn-primary">Cliquez ici !!</a>
+
+
+<br />
+
+@* /Contacts/Index *@
+
+@*Html Helpers*@
+@Html.ActionLink("Vers Contacts/Index", "Index", "Contacts")
+
+
+@*Tag Helpers*@
+<a asp-controller="Contacts" asp-action="Index" class="btn btn-primary">Vers /Contacts/Index</a>
+
+<a asp-controller="Contacts" class="btn btn-primary">Vers /Contacts/</a>
+
+<a asp-controller="Contacts" asp-action="Details" asp-route-id="5" class="btn btn-primary">Vers /Contacts/Details/5</a>

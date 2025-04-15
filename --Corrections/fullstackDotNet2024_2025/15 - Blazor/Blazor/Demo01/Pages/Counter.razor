@@ -1,0 +1,18 @@
+﻿@page "/counter"
+@page "/counter2"
+@page "/counter/{CurrentCount:int}"
+@* cast => sans le ":int" c'est un string*@
+
+@* @inherits CounterBase *@
+
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">+10</button>
+<button class="btn btn-primary" @onclick="() => IncrementCount()">Click me</button>
+<button class="btn btn-primary" @onclick="DecrementCount">-10</button>
+

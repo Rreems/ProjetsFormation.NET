@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model Contact
+}
+
+<head>
+	<h2>Contact #@Model.Id</h2>
+	<hr />
+</head>
+<body>
+	<ul>
+		<li><b>@Html.DisplayNameFor(c => c.FirstName)</b> : @Model.FirstName</li>
+		<li><b>@Html.DisplayNameFor(c => c.LastName)</b> : @Model.LastName</li>
+		<li><b>@Html.DisplayNameFor(c => c.Email)</b> : @Model.Email</li>
+		<li><b>@Html.DisplayNameFor(c => c.PhoneNumber)</b> : @Model.PhoneNumber</li>
+	</ul>
+</body>

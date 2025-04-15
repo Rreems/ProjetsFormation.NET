@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.Learning.DataBinding.Pages.DemoBindingFieldPage"
+             Title="DemoBindingFieldPage">
+    <VerticalStackLayout 
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" >
+        <HorizontalStackLayout>
+            <Label Text="FirstName:" />
+            <Entry Text="{Binding Person.FirstName}" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="LastName:" />
+            <Entry Text="{Binding Person.LastName}" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Email:" />
+            <Entry Text="{Binding Person.Email}" />
+        </HorizontalStackLayout>
+        
+    </VerticalStackLayout>
+</ContentPage>

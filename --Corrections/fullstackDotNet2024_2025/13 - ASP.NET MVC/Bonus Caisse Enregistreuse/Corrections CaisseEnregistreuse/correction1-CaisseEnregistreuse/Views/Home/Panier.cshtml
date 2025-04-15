@@ -1,0 +1,20 @@
+﻿@model List<Produit>
+@{
+    ViewData["Title"] = "Panier";
+}
+
+@if (Model.Count == 0)
+{
+    <p>Panier vide</p>
+}
+else
+{
+    @foreach (var p in Model)
+    {
+        <p>
+            @p.Nom @p.Prix 
+        </p>
+        <a asp-action="DetailsProduit" asp-controller="Home" asp-route-id="@p.Id" class="text-primary">Détails</a>
+    }
+    <a asp-action="ViderPanier" asp-controller="Home" class="btn btn-primary">Vider le panier</a>
+}

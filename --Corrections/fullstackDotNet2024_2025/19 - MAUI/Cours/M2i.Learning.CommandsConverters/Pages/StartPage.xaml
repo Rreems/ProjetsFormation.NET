@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:M2i.Learning.CommandsConverters.Converters"
+             x:Class="M2i.Learning.CommandsConverters.Pages.StartPage"
+             Title="StartPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:BoolAdminStatusConverter x:Key="boolAdminStatusConverter" />
+            <converters:IntegerAgeStringConverter x:Key="integerAgeStringConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <Grid ColumnDefinitions="*, 10, *">
+        <VerticalStackLayout Grid.Column="0" Padding="10" VerticalOptions="Center">
+            <HorizontalStackLayout>
+                <Label Text="FirstName:" />
+                <Entry Text="{Binding FirstName}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="LastName:" />
+                <Entry Text="{Binding LastName}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Email:" />
+                <Entry Text="{Binding Email}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Age:" />
+                <Entry Text="{Binding Age}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Age:" />
+                <Entry Text="{Binding Height}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <CheckBox IsChecked="{Binding IsAdmin}" />
+                <Label Text="IsAdmin?" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        <Rectangle Grid.Column="1" Fill="Black" />
+        <VerticalStackLayout Grid.Column="2" VerticalOptions="Center">
+            <HorizontalStackLayout>
+                <Label Text="FirstName:" />
+                <Label Text="{Binding FirstName}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="LastName:" />
+                <Label Text="{Binding LastName}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Email:" />
+                <Label Text="{Binding Email}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Age (converter):" />
+                <Label Text="{Binding Age, Converter={StaticResource integerAgeStringConverter}}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Age (stringformat):" />
+                <Label Text="{Binding Age, StringFormat='{0} yo'}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Height (stringformat):" />
+                <Label Text="{Binding Height, StringFormat='{0:0.##}'}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="IsAdmin?" />
+                <Label Text="{Binding IsAdmin, Converter={StaticResource boolAdminStatusConverter}}" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

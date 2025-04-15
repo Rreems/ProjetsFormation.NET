@@ -1,0 +1,42 @@
+﻿@model List<Marmoset>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Marmoset List";
+}
+
+<head>
+	<h2>Marmosets List</h2>
+	<hr />
+</head>
+<body>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>@Html.DisplayNameForInnerType((Marmoset m) => m.Id)</th>
+				<th>@Html.DisplayNameForInnerType((Marmoset m) => m.Name)</th>
+				<th>@Html.DisplayNameForInnerType((Marmoset m) => m.Color)</th>
+				<th>@Html.DisplayNameForInnerType((Marmoset m) => m.Age)</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var m in Model) {
+				<tr>
+					<td>@m.Id</td>
+					<td>@m.Name</td>
+					<td>@m.Color</td>
+					<td>@m.Age</td>
+					<td>
+						<a asp-action="Details" asp-route-id="@m.Id" class="btn btn-secondary"><span class="bi bi-pencil-square"></span> Details</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+		<div class="d-flex">
+			<a asp-action="CreateRandom" class="btn btn-success ms-auto"><span class="bi bi-plus-circle"></span> Add</a>
+		</div>
+</body>

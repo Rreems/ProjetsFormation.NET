@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.Learning.DataBinding.Pages.DemoBindingModePage"
+             Title="DemoBindingModePage">
+    <VerticalStackLayout Padding="30" Spacing="20">
+        <HorizontalStackLayout>
+            <Label Text="entry: "/>
+            <Entry x:Name="entryStart" Text="Texte par défaut..." />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="oneTime: "/>
+            <Entry x:Name="entryOT" Text="{Binding Source={x:Reference entryStart}, Path=Text, Mode=OneTime}" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="oneWay: "/>
+            <Entry x:Name="entryOW" Text="{Binding Source={x:Reference entryStart}, Path=Text, Mode=OneWay}" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="oneWayToSource: "/>
+            <Entry x:Name="entryOWTS" Text="{Binding Source={x:Reference entryStart}, Path=Text, Mode=OneWayToSource}" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="twoWay: "/>
+            <Entry x:Name="entryTW" Text="{Binding Source={x:Reference entryStart}, Path=Text, Mode=TwoWay}" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="default: "/>
+            <Entry x:Name="entryD" Text="{Binding Source={x:Reference entryStart}, Path=Text, Mode=Default}" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

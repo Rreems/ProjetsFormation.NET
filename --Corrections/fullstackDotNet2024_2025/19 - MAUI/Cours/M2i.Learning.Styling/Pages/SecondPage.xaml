@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="M2i.Learning.Styling.Pages.SecondPage"
+             Title="SecondPage">
+
+    <VerticalStackLayout>
+        <skia:SKLottieView Source="planet.json" HeightRequest="300" WidthRequest="300" RepeatCount="-1" />
+        <Label Text="SecondPage" StyleClass="Title, BlueLabel" />
+        <Button x:Name="btnGetPosts" Text="Click me!" Clicked="btnGetPosts_Clicked" />
+    </VerticalStackLayout>
+</ContentPage>

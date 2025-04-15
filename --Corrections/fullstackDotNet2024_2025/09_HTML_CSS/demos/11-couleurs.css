@@ -1,0 +1,44 @@
+.box {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+.box-1 {
+    /* couleurs sous forme de constante */
+    background-color: red;
+}
+
+/* utilisation des couleurs hexadécimale */
+.box-2 {
+    background-color: #FF0AFE;
+}
+
+/* On peut gérer la transparence avec les deux dernières valeurs */
+.box-3 {
+    background-color: #FF0AFE50;
+}
+
+.box-4 {
+    /* intensite de rouge, vert et bleu de 0 à 255 */
+    background-color: rgb(100, 10, 50);
+    /* background-color: rgb(30%, 10%, 50%);
+    background-color: rgb(100, 10, 50, 0.5);
+    background-color: rgb(10 20 30 / 0.2); */
+}
+
+.box-5 {
+    background-color: hsl(30deg 100 50);
+    /* background-color: hsl(20deg 100 30);
+    background-color: hsl(20deg 100 30); */
+    /* background-color: hsl(20deg 100 30 / 0.5; */
+}
+
+.box-6 {
+    background: linear-gradient(235deg, rgba(167,79,3,1) 0%, rgba(118,9,121,1) 53%, rgba(0,247,255,1) 100%);
+}
+
+/* Couleur mieux mais on sait pas trop histoire de cylindre */
+.box-7 {
+    background-color: oklch(50% 0.200 0.5);
+}

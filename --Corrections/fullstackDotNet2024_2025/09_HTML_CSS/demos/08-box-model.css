@@ -1,0 +1,9 @@
+p {
+    width: 400px;
+    height: 50px;
+    padding: 5ch;
+    border: 1px solid black;
+    /* overflow: scroll; */
+    background-color: oklch(59.69% 0.156 49.77);
+    margin: 100px 0 0;
+}

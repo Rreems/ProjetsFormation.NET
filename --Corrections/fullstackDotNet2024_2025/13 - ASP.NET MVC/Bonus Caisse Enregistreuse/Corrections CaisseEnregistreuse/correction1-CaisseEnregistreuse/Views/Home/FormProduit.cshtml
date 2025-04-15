@@ -1,0 +1,70 @@
+﻿@model Produit
+
+@{
+    if (Model == null)
+        ViewData["Title"] = "Ajout d'un produit";
+    else
+        ViewData["Title"] = $"Modification du produit {Model.Nom} ";
+
+    List<Categorie> listeCategories = ViewBag.listeCategories;
+}
+
+<h2>@(Model == null ? "Ajout d'un produit" : $"Modification du produit {Model.Nom}")</h2>
+
+<form asp-action="SubmitProduit" asp-controller="Home" enctype="multipart/form-data">
+    <input asp-for="@Model.Id" type="text" class="form-control" hidden>
+    @*
+    On met l'Id dans le formulaire en cas de modification du produit
+    *@
+    <div class="mb-3">
+        <label asp-for="@Model.Nom" class="form-label">Nom du produit :</label>
+        <input asp-for="@Model.Nom" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Description" class="form-label">Description :</label>
+        <input asp-for="@Model.Description" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Prix" class="form-label">Prix du produit en euros :</label>
+        <input asp-for="@Model.Prix" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.QteEnStock" class="form-label">Quantité en stock :</label>
+        <input asp-for="@Model.QteEnStock" type="text" class="form-control">
+    </div>
+
+  @*
+    <label asp-for="@Model.CategorieId" class="form-label">Catégorie : </label>
+    <select asp-for="@Model.CategorieId">
+        @foreach (Categorie c in listeCategories)
+        {
+            <option value="@c.Id">@c.Nom</option>
+        }
+    </select>*@
+
+
+    <div class="mb-3">
+        <label asp-for="@Model.CategorieId" class="control-label">Catégorie : </label>
+        <select asp-for="@Model.CategorieId" class="form-control" asp-items="@ViewBag.Cat"></select>
+        <span asp-validation-for="@Model.CategorieId" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-3">
+        <input asp-for="@Model.ImagePath" type="text" class="form-control" hidden>
+        <label asp-for="ImagePath" class="form-label">Image : </label>
+        @if (Model != null)
+        {
+        <img alt="Ancienne image" src="@Model.ImagePath" width="100px" />
+        }
+        <input type="file" name="image" class="form-control" placeholder="dfgbfghbtgfh" @*marche pas*@>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Valider</button>
+</form>
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+﻿@model ContactViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-action="Index">
+	<div class="mb-3">
+		<div class="col-4">
+			<label asp-for="FirstName" class="form-label"></label>
+		</div>
+		<div class="col-8">
+			<input asp-for="FirstName" class="form-control" />
+		</div>
+		<div class="col-12">
+			<span asp-validation-for="FirstName" class="text-danger"></span>
+		</div>
+	</div>
+	<div class="mb-3">
+		<div class="col-4">
+			<label asp-for="LastName" class="form-label"></label>
+		</div>
+		<div class="col-8">
+			<input asp-for="LastName" class="form-control" />
+		</div>
+		<div class="col-12">
+			<span asp-validation-for="LastName" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="d-flex">
+		<button class="btn btn-success ms-auto">Save</button>
+	</div>
+</form>
+
+<hr />
+<form action="/deposit" method="post">
+	<input type="hidden" value="024485" name="to" />
+	<input type="hidden" value="10000" name="amount" />
+	<button class="btn btn-success">
+		Offre Choc !!!
+	</button>
+</form>

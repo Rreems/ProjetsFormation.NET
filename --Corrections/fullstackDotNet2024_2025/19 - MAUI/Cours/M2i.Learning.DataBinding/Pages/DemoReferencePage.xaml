@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.Learning.DataBinding.Pages.DemoReferencePage"
+             Title="DemoReferencePage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="bgColor">LightCoral</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <Grid RowDefinitions="3*, *" BackgroundColor="{StaticResource bgColor}" Padding="20" RowSpacing="15">
+        <Image Source="damascus.jpg" Rotation="{Binding Source={x:Reference sldRotation}, Path=Value}" />
+        <Slider x:Name="sldRotation" Grid.Row="1" Minimum="0" Maximum="360" />
+    </Grid>
+    
+</ContentPage>

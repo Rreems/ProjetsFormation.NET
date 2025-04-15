@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les tables</title>
+</head>
+<body>
+
+    <h1>Les tableaux</h1>
+
+    <hr>
+
+    <h2>Table simple</h2>
+
+    <!-- Balise de tableau -->
+    <table>
+        <!-- tr: table row, représente une ligne -->
+        <tr>
+            <!-- td: table data, représente une cellule -->
+            <td>id</td>
+            <td>name</td>
+            <td>created_at</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Jean</td>
+            <td>2011-12-04</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Michelle</td>
+            <td>2014-10-03</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <table>
+        <caption>
+            Tableau des salariés
+        </caption>
+        <!-- Entête -->
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">name</th>
+                <th scope="col">salary</th>
+            </tr>
+        </thead>
+        <!-- Corps -->
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Thomas</td>
+                <td>2500</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sylvie</td>
+                <td>2700</td>
+            </tr>
+        </tbody>
+        <!-- Pied -->
+        <tfoot>
+            <tr>
+                <td colspan="2">total</td>
+                <td>5200</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

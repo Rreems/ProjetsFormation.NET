@@ -1,0 +1,17 @@
+﻿@using TodoList.Controllers;
+@{
+    ViewData["Title"] = "Formulaire d'ajout";
+}
+@model ToDo
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="@nameof(ToDoController.Submit)"> @*possible d'utiliser le nameof pour renommer plus facilement*@
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Title" aria-describedby="">
+        <label asp-for="Description" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Description" aria-describedby="">
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

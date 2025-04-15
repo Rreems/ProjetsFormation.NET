@@ -1,0 +1,32 @@
+﻿@page "/render-fragment"
+
+<h3>Render childs</h3>
+
+<RenderFragmentChild> Bonjour à tous ! </RenderFragmentChild>
+
+
+<RenderFragmentChild>
+    Content of the <strong>child component</strong> is supplied
+    by the parent component.
+</RenderFragmentChild>
+
+
+<RenderFragmentChild>
+    <Counter CurrentCount="141" />
+</RenderFragmentChild>
+
+
+@for (int i = 0; i < 3; i++)
+{
+    var currentI = i;
+    <RenderFragmentChild>
+        <div class="text-danger">
+            @* i = @i *@ @* /!\ attention, i sera à sa dernière valeur, il est lié/bind à notre classe *@
+            i = @currentI
+        </div>
+    </RenderFragmentChild>
+}
+
+@code {
+
+}

@@ -1,0 +1,1 @@
+json-server -w [chemin vers le fichier.json]

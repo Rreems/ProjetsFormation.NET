@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.Teaching.Basics.Controls.DemoControlsPage"
+             Title="DemoControlsPage"
+             BackgroundColor="LightCoral">
+    <ScrollView>
+        <VerticalStackLayout>
+            <!--Elements pour l'affichage-->
+            <Label Text="Texte" FontSize="24" FontFamily="Verdana" TextDecorations="Underline" TextColor="DarkGray" />
+            <Label Text="Je suis à la fin"  HorizontalTextAlignment="End" />
+            <Ellipse HeightRequest="250" WidthRequest="250" BackgroundColor="Red" Stroke="Blue" StrokeThickness="40"  />
+            <Rectangle HeightRequest="50" WidthRequest="100" BackgroundColor="Violet" />
+            <Frame HorizontalOptions="Center" CornerRadius="25" BorderColor="Green" Margin="5, 10, 15, 20" Padding="10" BackgroundColor="Transparent">
+                <Label x:Name="displayLabel" Text="Je suis dans une Frame!" />
+            </Frame>
+            <Image Source="dotnet_bot.png" HeightRequest="50" WidthRequest="50"/>
+
+            <!--Elements pour intéraction-->
+            <Entry x:Name="entryA"  Keyboard="Text" Text="Texte par défaut" TextColor="Blue" Placeholder="Votre nom..."  PlaceholderColor="DarkRed" Completed="entryA_Completed" TextChanged="entryA_TextChanged" />
+            <Button x:Name="leBouton" Clicked="leBouton_Clicked" Text="Cliquez ici !" />
+            <CheckBox x:Name="laCheckBox" IsChecked="True" CheckedChanged="laCheckBox_CheckedChanged" />
+            <Switch x:Name="leSwitch" IsToggled="True" Toggled="leSwitch_Toggled" />
+            <Slider x:Name="leSlider" Minimum="0" Maximum="100" Value="50" MinimumTrackColor="Red" MaximumTrackColor="Green" ThumbColor="White" ValueChanged="leSlider_ValueChanged" />
+            <Stepper x:Name="leStepper" Minimum="0" Maximum="30" Increment="5" Value="10" ValueChanged="leStepper_ValueChanged" />
+            <DatePicker x:Name="leDatePicker" DateSelected="leDatePicker_DateSelected" />
+            <TimePicker x:Name="leTimePicker" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

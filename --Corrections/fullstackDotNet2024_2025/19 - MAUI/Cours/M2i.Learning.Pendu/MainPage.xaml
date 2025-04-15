@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.LEarning.Pendu.MainPage"
+             BackgroundColor="Beige">
+
+    <Grid HorizontalOptions="Center" Padding="5" RowDefinitions="2*, 6*,2*, 3*, 8*" RowSpacing="10">
+        <VerticalStackLayout Grid.Row="0">
+            <Label FontSize="30" Text="Hangman Game" HorizontalTextAlignment="Center" />
+            <Label FontSize="18" Text="{Binding ErrorMessage}" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+        
+        <Image Grid.Row="1" Source="{Binding PictureName}" />
+
+        <Label Grid.Row="2" Text="{Binding Mask}" FontSize="30" HorizontalTextAlignment="Center"/>
+
+        <VerticalStackLayout x:Name="stckLaytWinStatus" Grid.Row="3" IsVisible="False" >
+            <Label x:Name="lblWin" Text="You lost!" FontSize="14" HorizontalTextAlignment="Center"/>
+            <Button x:Name="btnRetry" Clicked="btnRetry_Clicked" Text="Retry?" FontSize="16" Margin="0, 5, 0, 0" HorizontalOptions="Center" BackgroundColor="OrangeRed" FontAttributes="Bold"/>
+        </VerticalStackLayout>
+
+        <FlexLayout x:Name="flxLaytLetterButtons" Grid.Row="4" BindableLayout.ItemsSource="{Binding Letters}" Wrap="Wrap" JustifyContent="SpaceEvenly">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Button x:Name="btnLetter" Text="{Binding .}" HeightRequest="50" WidthRequest="50" BackgroundColor="OrangeRed" FontAttributes="Bold" Clicked="btnLetter_Clicked"/>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+        
+    </Grid>
+
+</ContentPage>

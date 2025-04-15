@@ -1,0 +1,92 @@
+﻿@model HashSet<MovieViewModel>
+
+@{
+    ViewData["Title"] = "Movie List";
+
+    bool IsTitleLongerThan50Chars (string title) => title.Length >= 50;
+
+    var btnMovieStatusClass = (MovieViewModel movie) => movie.IsWatched ? "btn-movie-status--seen" : "btn-movie-status--tosee";
+
+    var btnMovieStatusTextContent = (MovieViewModel movie) => movie.IsWatched ? "Watched" : "Unwatched";
+}
+
+<div class="d-flex">
+    <h1>@ViewData["Title"]</h1>
+    <a asp-action="Create" class="btn btn-success ms-auto">
+        <span class="bi bi-plus-circle"></span> Add
+    </a>
+</div>
+<hr />
+<div class="row">
+    @foreach (var movie in Model.Where(m => m.IsFavorite))
+    {
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header d-flex">
+                <h5 class="card-title">@movie.Title</h5>
+				<a asp-action="SwitchStatus" asp-route-id="@movie.Id" class="ms-auto btn-movie-status @btnMovieStatusClass(movie)">
+                    @btnMovieStatusTextContent(movie)
+                </a>
+            </div>
+            <img src="@movie.PictureUrl" class="card-img-top" alt="@movie.Title">
+            <div class="card-body">
+            <p class="card-text">
+                @movie.Description.Substring(0, IsTitleLongerThan50Chars(movie.Description) ? 50 : movie.Description.Length)@(IsTitleLongerThan50Chars(movie.Description)
+                                                                                                                              ? "..." : "")
+            </p>
+            </div>
+            <div class="card-footer d-flex justify-content-end">
+                <a asp-action="RemoveFromFavorites" asp-route-id="@movie.Id" class="btn btn-secondary">
+                    <span class="bi bi-star"></span> - Fav
+                </a>
+                <a asp-action="Details" asp-route-id="@movie.Id" class="btn btn-info">
+                    <span class="bi bi-eye"></span> Details
+                </a>
+                <a asp-action="Edit" asp-route-id="@movie.Id" class="btn btn-warning mx-2">
+                    <span class="bi bi-pencil-square"></span> Edit
+                </a>
+                <a asp-action="Delete" asp-route-id="@movie.Id" class="btn btn-danger">
+                    <span class="bi bi-trash"></span> Delete
+                </a>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+<hr>
+<div class="row">
+    @foreach (var movie in Model.Where(m => !m.IsFavorite))
+    {
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header d-flex">
+                <h5 class="card-title">@movie.Title</h5>
+				<a asp-action="SwitchStatus" asp-route-id="@movie.Id" class="ms-auto btn-movie-status @btnMovieStatusClass(movie)">
+                    @btnMovieStatusTextContent(movie)
+                </a>
+            </div>
+            <img src="@movie.PictureUrl" class="card-img-top" alt="@movie.Title">
+            <div class="card-body">
+            <p class="card-text">
+                @movie.Description.Substring(0, IsTitleLongerThan50Chars(movie.Description) ? 50 : movie.Description.Length)@(IsTitleLongerThan50Chars(movie.Description)
+                                                                                                                              ? "..." : "")
+            </p>
+            </div>
+            <div class="card-footer d-flex justify-content-end">
+                <a asp-action="AddToFavorites" asp-route-id="@movie.Id" class="btn btn-warning">
+                    <span class="bi bi-star-fill"></span> + Fav
+                </a>
+                <a asp-action="Details" asp-route-id="@movie.Id" class="btn btn-info">
+                    <span class="bi bi-eye"></span> Details
+                </a>
+                <a asp-action="Edit" asp-route-id="@movie.Id" class="btn btn-warning mx-2">
+                    <span class="bi bi-pencil-square"></span> Edit
+                </a>
+                <a asp-action="Delete" asp-route-id="@movie.Id" class="btn btn-danger">
+                    <span class="bi bi-trash"></span> Delete
+                </a>
+            </div>
+        </div>
+    </div>
+    }
+</div>

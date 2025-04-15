@@ -1,0 +1,18 @@
+object:
+  propertyA: 
+    sousPropA: valeur
+    souspropB: 258
+  propertyB: valeur
+
+
+objectB:
+  propertyA:
+    - valeurA
+    - valeurB
+    - valeurC
+
+objectC:
+  - name: objectName
+    url: http://localhost/
+  - name: objectNameBis
+    url: http://google.fr/

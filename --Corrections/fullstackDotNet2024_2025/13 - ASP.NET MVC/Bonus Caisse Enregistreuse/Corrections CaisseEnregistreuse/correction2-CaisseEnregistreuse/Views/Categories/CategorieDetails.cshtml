@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Détails pour une catégorie";
+    Categorie c = Model;
+}
+
+@model Categorie
+
+@if (Model == null)
+{
+    <p class="text-danger">Aucune catégorie avec cet id.</p>
+}
+else
+{
+    <div class="card m-3 p-2" style="width: 300px;">
+        <div class="card-title text-center"><h5>@Model.Name</h5> </div>
+        <hr />
+        <div class="card-body">
+            <p>Catégorie Id : @Model.Id</p>
+        </div>
+    </div>
+    @if (Model.Produits != null && Model.Produits.Any())
+    {
+        <div class="card m-3 p-2" style="width: 500px;">
+            <div class="card-title text-center"><h5>Produits associés</h5> </div>
+            <hr />
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>@Html.DisplayNameForInnerType((Produit prod) => prod.ProduitPath)</th>
+                            <th>@Html.DisplayNameForInnerType((Produit prod) => prod.Name)</th>
+                            <th>@Html.DisplayNameForInnerType((Produit prod) => prod.Description)</th>
+                            <th>@Html.DisplayNameForInnerType((Produit prod) => prod.Price)</th>
+                            <th>@Html.DisplayNameForInnerType((Produit prod) => prod.StorageQuantity)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Produit prod in Model.Produits)
+                        {
+                            <tr>
+                                <td> <img alt="Image" class="img-thumbnail" src="@prod.ProduitPath"/></td>
+                                <td>@prod.Name</td>
+                                <td>@prod.Description</td>
+                                <td>@prod.Price</td>
+                                <td>@prod.StorageQuantity</td>
+                                <td><button class="btn btn-info">Ajouter au panier</button></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+}

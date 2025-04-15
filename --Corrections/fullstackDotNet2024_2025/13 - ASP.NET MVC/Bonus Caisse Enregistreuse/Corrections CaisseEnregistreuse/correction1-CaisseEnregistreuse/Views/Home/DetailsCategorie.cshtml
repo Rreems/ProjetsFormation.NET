@@ -1,0 +1,33 @@
+﻿@model Categorie
+@{  
+    Categorie c = Model;
+    ViewData["Title"] = @c.Nom;
+}
+
+@if (Model == null) 
+{
+    <p class="text-danger">
+        Aucune catégorie trouvée
+    </p>
+}
+else
+{
+    <h5>Produits de la catégorie @c.Nom :</h5>
+<div class="container d-flex flex-wrap justify-content-between">
+    @foreach (Produit p in Model.ListeProduits)
+    {
+        <div class="card m-2 p-2" style="width: 300px;">
+            <div class="card-title text-center"><h5>@p.Nom</h5> </div>
+            <div class="card-body">
+                    <img alt="exocet" src="@p.ImagePath" class="img-thumbnail" />
+                <p>@p.Description</p>
+                <p>@p.Prix €</p>
+                <p>@p.QteEnStock unités en stock</p>
+            </div>
+        </div>
+    }
+ </div>
+}
+
+
+<a asp-action="ListeCategories" asp-controller="Home">Retour à la Liste des catégories</a>

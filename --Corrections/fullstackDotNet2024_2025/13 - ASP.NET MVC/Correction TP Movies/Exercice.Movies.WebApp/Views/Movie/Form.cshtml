@@ -1,0 +1,136 @@
+﻿
+@using Exercice.Movies.Data.Entities
+@model MovieCreateViewModel
+
+@{
+    string formMode = ViewBag.FormMode;
+    string movieId = ViewBag.FormMode != "Create" ? ((MovieEditDeleteViewModel) Model).Id.ToString() : "";
+
+    ViewData["Title"] = formMode switch
+    {
+        "Details" => "Movie Details",
+        "Edit" => "Edit Movie",
+        "Delete" => "Delete Movie",
+        _ => "Create Movie"
+    };
+
+    var buttonText = formMode switch
+    {
+        "Details" => "Return",
+        "Edit" => "Edit",
+        "Delete" => "Confirm",
+        _ => "Add"
+    };
+
+    var buttonColorClass = formMode switch
+    {
+        "Details" => "btn-secondary",
+        "Edit" => "btn-warning",
+        "Delete" => "btn-danger",
+        _ => "btn-success"
+    };
+
+    var buttonIconClass = formMode switch
+    {
+        "Details" => "bi-arrow-left",
+        "Edit" => "bi-pencil-square",
+        "Delete" => "bi-trash",
+        _ => "bi-plus-circle"
+    };
+
+    var readonlyMode = formMode is "Details" or "Delete";
+
+    var movieGenres = from MovieGenre mg in Enum.GetValues(typeof(MovieGenre))
+        select new { Id = (int)mg, Name = mg.ToString() };
+    var selectList = new SelectList(movieGenres , "Id", "Name");
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr>
+<form asp-action="@formMode" enctype="multipart/form-data">
+    <input type="hidden" name="Id" value="@movieId"/>
+    <div class="mb-3">
+        <div class="col-4">
+            <label asp-for="Title" class="form-label"></label>
+        </div>
+        <div class="col-8">
+            <input asp-for="Title" class="form-control" readonly="@readonlyMode">
+        </div>
+        <div class="col-12">
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="col-4">
+            <label asp-for="Description" class="form-label"></label>
+        </div>
+        <div class="col-8">
+            <textarea asp-for="Description" class="form-control" readonly="@readonlyMode"></textarea>
+        </div>
+        <div class="col-12">
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="col-4">
+            <label asp-for="Director" class="form-label"></label>
+        </div>
+        <div class="col-8">
+            <input asp-for="Director" class="form-control" readonly="@readonlyMode">
+        </div>
+        <div class="col-12">
+            <span asp-validation-for="Director" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="col-4">
+            <label asp-for="ReleaseDate" class="form-label"></label>
+        </div>
+        <div class="col-8">
+            <input type="date" asp-for="ReleaseDate" class="form-control" readonly="@readonlyMode">
+        </div>
+        <div class="col-12">
+            <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="col-4">
+            <label asp-for="Picture" class="form-label"></label>
+        </div>
+        <div class="col-8">
+            <input asp-for="Picture" class="form-control" readonly="@readonlyMode">
+        </div>
+        <div class="col-12">
+            <span asp-validation-for="Picture" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="col-4">
+            <label asp-for="Genre" class="form-label"></label>
+        </div>
+        <div class="col-8">
+            <select class="form-select" asp-items="selectList" asp-for="Genre" readonly="@readonlyMode"></select>
+        </div>
+        <div class="col-12">
+            <span asp-validation-for="Genre" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="d-flex">
+        @if (formMode != "Details")
+        {
+            <button class="btn ms-auto @buttonColorClass">
+            <span class="bi @buttonIconClass">
+                @buttonText
+            </span>
+            </button>
+        }
+        else
+        {
+            <a asp-action="Index" class="btn ms-auto @buttonColorClass">
+                <span class="bi @buttonIconClass">
+                    @buttonText
+                </span>
+            </a>
+        }
+    </div>
+</form>

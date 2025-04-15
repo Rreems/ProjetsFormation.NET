@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compiler="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="txtColorLightMode">#e0e0e0</Color>
+    <Color x:Key="bgColorLightMode">#0d0d0d</Color>
+
+    <Color x:Key="txtColorDarkMode">#0d0d0d</Color>
+    <Color x:Key="bgColorDarkMode">#e0e0e0</Color>
+
+    <!--#region ButtonStyles-->
+    <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="LightCoral" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="Padding" Value="20, 10" />
+    </Style>
+
+    <Style x:Key="YellowButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="LightYellow" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="Padding" Value="20, 10" />
+    </Style>
+
+    <Style x:Key="OrangeButton" BasedOn="{StaticResource YellowButton}" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Orange" />
+    </Style>
+
+    <Style x:Key="DarkModeButton" BasedOn="{StaticResource YellowButton}" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource bgColorLightMode}, Dark={StaticResource bgColorDarkMode}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource txtColorLightMode}, Dark={StaticResource txtColorDarkMode}}" />
+    </Style>
+    <!--#endregion-->
+
+    <!--#region LabelStyles-->
+    <Style x:Key="labelFontFamilyStyle1" TargetType="Label">
+        <Setter Property="FontFamily" Value="Impact" />
+    </Style>
+
+    <Style TargetType="Label" Class="BlueLabel" BasedOn="{StaticResource labelFontFamilyStyle1}">
+        <Setter Property="TextColor" Value="Blue" />
+    </Style>
+
+    <Style TargetType="Label" Class="GreenLabel" BasedOn="{StaticResource labelFontFamilyStyle1}">
+        <Setter Property="TextColor" Value="Green" />
+    </Style>
+
+    <Style TargetType="Label" Class="Title" BasedOn="{StaticResource labelFontFamilyStyle1}">
+        <Setter Property="FontSize" Value="30" />
+    </Style>
+
+    <Style TargetType="Label" Class="Heading" BasedOn="{StaticResource labelFontFamilyStyle1}">
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+    <!--#endregion-->
+
+    <Style TargetType="VerticalStackLayout">
+        <Setter Property="Spacing" Value="20" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+</ResourceDictionary>

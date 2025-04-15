@@ -1,0 +1,44 @@
+services:
+  mysql-server:
+    container_name: mysql-server
+    image: mysql:9
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root-password
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user-password
+    ports:
+      - 3306:3306
+      # - "33060:33060"
+    volumes:
+      - data:/var/lib/mysql
+
+  mon-api:
+    container_name: api
+    build: chemin/vers/api/dotnet
+    depends_on:
+      - mysql-server
+    environment:
+      DB_HOST: mysql-server
+      DB_NAME: testdb
+      DB_USER: user
+      DB_PASSWORD: user-password
+
+  mysql-client:
+    container_name: mysql-client
+    image: mysql:9
+    environment:
+      MYSQL_ROOT_PASSWORD: root-password
+
+  ubuntu:
+    container_name: mon-ubuntu
+    image: ubuntu
+    # stdin_open: true # -i
+    tty: true # -t
+
+volumes:
+  data: 
+
+
+  

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.Learning.Navigation.Pages.FirstPage"
+             Title="FirstPage">
+    <VerticalStackLayout Spacing="10">
+        <Entry x:Name="entryText" HorizontalOptions="Center" WidthRequest="200"/>
+        <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+            <Button x:Name="btnNextPage" Text="Next" Clicked="btnNextPage_Clicked" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

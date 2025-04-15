@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.Learning.DataBinding.Pages.DemoBindingBisView"
+             Title="DemoBindingBisView"
+             BackgroundColor="DarkGray">
+    <ScrollView>
+        <CollectionView ItemsSource="{Binding Cats}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="5" CornerRadius="10" BorderColor="Transparent" Margin="10" WidthRequest="250">
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <HorizontalStackLayout>
+                                <Label Text="Name: " />
+                                <Label Text="{Binding Name}" />
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Breed: " />
+                                <Label Text="{Binding Breed}" />
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Color: " />
+                                <Label Text="{Binding Color}" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ScrollView>
+</ContentPage>

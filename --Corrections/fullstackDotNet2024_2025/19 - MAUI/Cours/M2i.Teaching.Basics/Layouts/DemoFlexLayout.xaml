@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.Teaching.Basics.Layouts.DemoFlexLayout"
+             Title="DemoFlexLayout">
+    <!--<FlexLayout Direction="Row" JustifyContent="SpaceAround" AlignItems="Center" Wrap="Wrap">-->
+    <FlexLayout Direction="Row" AlignItems="Center">
+        <Label Text="Label A" BackgroundColor="Red" FlexLayout.Grow="1" FlexLayout.Shrink="2" FlexLayout.Basis="250"/>
+        <Label Text="Label B" BackgroundColor="Blue" FlexLayout.Grow="3" FlexLayout.Shrink="1" FlexLayout.Basis="250"/>
+        <Label Text="Label C" BackgroundColor="Green" FlexLayout.Grow="2" FlexLayout.Shrink="1" FlexLayout.Basis="250"/>
+    </FlexLayout>
+</ContentPage>

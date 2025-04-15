@@ -1,0 +1,39 @@
+﻿@model List<Produit>
+
+<a asp-action="FormulaireAjoutProd" class="btn btn-primary" asp-controller="Produits">Ajouter</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">@Html.DisplayNameForInnerType((Produit prod) => prod.Name)</th>
+            <th scope="col">@Html.DisplayNameForInnerType((Produit prod) => prod.CategorieId)</th>
+            <th scope="col">@Html.DisplayNameForInnerType((Produit prod) => prod.Description)</th>
+            <th scope="col">@Html.DisplayNameForInnerType((Produit prod) => prod.Price)</th>
+            <th scope="col">@Html.DisplayNameForInnerType((Produit prod) => prod.StorageQuantity)</th>
+
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Produit prod in Model)
+        {
+            <tr>
+                <th scope="row">@prod.Id</th>
+                <td>@prod.Name</td>
+                <td>@prod.CategorieId</td>
+                <td>@prod.Description</td>
+                <td>@prod.Price</td>
+                <td>@prod.StorageQuantity</td>
+                <td>
+
+                    <a asp-action="ProduitDetail" class="btn btn-primary" asp-controller="Produits" asp-route-id="@prod.Id">Détails</a>
+                    <a asp-action="DeleteProd" class="btn btn-danger" asp-controller="Produits" asp-route-id="@prod.Id">Supprimer</a>
+                    <a asp-action="UpdateProd" asp-controller="Produits" asp-route-id="@prod.Id" class="btn btn-warning">Modifier</a>
+                    <a asp-action="AddToFavoris" asp-controller="Produits" asp-route-id="@prod.Id" class="btn btn-warning">Ajouter Aux Favoris</a>
+                    <a asp-action="AddToCart" asp-controller="Produits" asp-route-id="@prod.Id" class="btn btn-info">Ajouter au panier</a>
+
+                </td>
+            </tr>
+        }
+</table>

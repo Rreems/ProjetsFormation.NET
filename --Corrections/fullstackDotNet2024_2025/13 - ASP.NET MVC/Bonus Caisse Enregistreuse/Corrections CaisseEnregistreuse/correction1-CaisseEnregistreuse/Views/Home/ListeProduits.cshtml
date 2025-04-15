@@ -1,0 +1,31 @@
+﻿@model List<Produit>
+
+<h1 class="text-center">Liste des produits</h1>
+
+
+<p><a asp-action="AjoutProduit" asp-controller="Home">+ Ajouter un produit</a></p>
+
+<div class="container d-flex flex-wrap justify-content-between">
+    @foreach (Produit p in Model.OrderBy(p => p.Nom))
+    {
+        <div class="card m-2 p-2" style="width: 250px;">
+            <div class="text-center">
+            <a asp-area="" asp-controller="Home" asp-action="DetailsProduit" asp-route-id=@p.Id>
+                    <img alt="exocet" src="@p.ImagePath" class="img-thumbnail" />
+                <h5>@p.Nom</h5>
+            </a>
+                <p><small>@p.Description</small></p>
+            </div>
+            <div style="height : auto;"></div>
+            <div class="card-body m-0 pb-1">
+                <small>
+                    <p>Catégorie :  <a asp-area="" asp-controller="Home" asp-action="DetailsCategorie" asp-route-id=@p.CategorieId>@p.Categorie.Nom</a><br />
+                    @p.QteEnStock unités en stock</p></small>
+                <div><p class="prix">@p.Prix €</p></div>
+                <p><a asp-action="AjouterAuPanier" asp-controller="Home" asp-route-id="@p.Id" class="text-primary panier">Ajouter au panier</a></p>
+                <p><a asp-action="ModifierProduit" asp-controller="Home" asp-route-id=@p.Id class="text-success editer">Éditer le produit</a></p>
+                <p><a asp-action="DeleteProduit" asp-controller="Home" asp-route-id=@p.Id class="text-danger supprimer">Supprimer le produit</a></p>
+            </div>
+        </div>
+    }
+</div>

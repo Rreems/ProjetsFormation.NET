@@ -1,0 +1,133 @@
+﻿@page "/pendu/{Tries:int?}"
+@using ExercicesNombreEtPendu.Classes;
+
+<h3>Pendu</h3>
+
+@if (IsGameOver)
+{
+    <h2>@(IsWin ? "Gagné ! 🤪" : "Perdu 😭")</h2>
+    <h4>@MessageMasque</h4>
+    <button @onclick="Restart" class="btn btn-primary">Rejouer</button>
+}
+else
+{
+    <h4>Devinez Le mot</h4>
+    <h4>@MessageMasque</h4>
+
+    <label for="lettre">"Veuillez saisir une lettre : "</label>
+    <input id="lettre" type="text" @bind="InputValue" />
+    <button @onclick="() => JouerUnTour()" class="btn btn-primary">Tester la Lettre</button>
+
+    <div class="row align-content-center justify-content-center">
+        @for(char letter ='a'; letter <= 'z'; letter++)
+        {
+            char testLetter = letter;
+            <button class="btn btn-info col-1 m-1" @onclick="() => JouerUnTour(testLetter)"  >@testLetter.ToString().ToUpper()</button>
+        }
+    </div>
+    <h4>@MessageEssaisRestants</h4>
+    <h4>@MessageTestChar</h4>
+}
+
+<svg height="400" width="400">
+    @if (ShowPendu > 0)
+    {
+        <line x1="80" y1="250" x2="200" y2="250" stroke="black" stroke-width="4"></line>
+    }
+    @if (ShowPendu > 1)
+    {
+        <line x1="100" y1="250" x2="100" y2="20" stroke="black" stroke-width="4"></line>
+    }
+    @if (ShowPendu > 2)
+    {
+        <line x1="100" y1="20" x2="200" y2="20" stroke="black" stroke-width="4"></line>
+    }
+    @if (ShowPendu > 3)
+    {
+        <line x1="100" y1="50" x2="130" y2="20" stroke="black" stroke-width="4"></line>
+    }
+    @if (ShowPendu > 4)
+    {
+        <line x1="200" y1="20" x2="200" y2="60" stroke="black" stroke-width="4"></line>
+    }
+    <g id="body" stroke="black" stroke-width="4">
+        @if (ShowPendu > 5)
+        {
+            <g id="head">
+            <circle cx="200" cy="80" r="20" fill="white"></circle>
+            <g id="rEyes">
+                <circle cx="193" cy="80" r="4"></circle>
+                <circle cx="207" cy="80" r="4"></circle>
+            </g>
+            <g id="xEyes" class="hide">
+                <line x1="190" y1="78" x2="196" y2="84"></line>
+                <line x1="204" y1="78" x2="210" y2="84"></line>
+                <line x1="190" y1="84" x2="196" y2="78"></line>
+                <line x1="204" y1="84" x2="210" y2="78"></line>
+            </g>
+        </g>}
+        @if (ShowPendu > 6) {<line x1="200" y1="100" x2="200" y2="150"></line>}
+        @if (ShowPendu > 7) {<line id="armL" x1="200" y1="120" x2="170" y2="140"></line>}
+        @if (ShowPendu > 8) {<line id="armR" x1="200" y1="120" x2="230" y2="140"></line>}
+        @if (ShowPendu > 9) {<line id="legL" x1="200" y1="150" x2="180" y2="190"></line>}
+        @if (ShowPendu > 10) {<line id="legR" x1="200" y1="150" x2="220" y2="190"></line>}
+    </g>
+</svg>
+
+<button class="btn btn-outline-warning" @onclick="() => ShowPendu = (ShowPendu + 1) % 12">Voir les différents pendus</button>
+
+@code {
+    private Pendu? _pendu;
+
+    public string? MessageMasque { get; set; }
+    public string? MessageEssaisRestants { get; set; }
+    public string? MessageTestChar { get; set; }
+
+    public string InputValue { get; set; } = "";
+
+    public bool IsGameOver { get; set; }
+    public bool IsWin { get; set; }
+
+    public int ShowPendu { get; set; }
+
+    [Parameter]
+    public int Tries { get; set; } = 10;
+
+    protected override void OnInitialized()
+    {
+        Restart();
+    }
+
+    protected override void OnParametersSet()
+    {
+        Restart();
+    }
+
+    private void JouerUnTour(char? letter = null)
+    {
+
+        MessageTestChar = _pendu!.TestChar(letter ?? InputValue[0]);
+
+        _pendu.GenererMasque();
+
+
+        IsWin = _pendu.TestWin();
+        IsGameOver = IsWin || _pendu.NbEssaisRestants <= 0;
+        MessageMasque = $"Le mot à trouver : {_pendu.Masque}";
+        MessageEssaisRestants = $"Il vous reste {_pendu.NbEssaisRestants} essais";
+
+        ShowPendu = (Tries - _pendu.NbEssaisRestants) * 11 / Tries;
+    }
+
+    private void Restart()
+    {
+        _pendu = new Pendu(Tries);
+        IsGameOver = false;
+        IsWin = false;
+        InputValue = "";
+        MessageMasque = $"Le mot à trouver : {_pendu.Masque}";
+        MessageEssaisRestants = $"Il vous reste {_pendu.NbEssaisRestants} essais";
+        MessageTestChar = "";
+        ShowPendu = 0;
+    }
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre mystère</title>
+</head>
+<body>
+    <div class="card">
+        <h1>Le nombre mystère</h1>
+        <p>j'ai généré un nombre entre 1 et 50 inclus</p>
+        <p class="message"></p>
+        <div class="saisie">
+            <span>Nombre de coups : <span class="nbCoups"></span></span>
+            <input type="number" class="nbUser">
+            <button class="submit" onclick="valider()">Valider</button>
+        </div>
+        <button class="replay" onclick="startGame()">Rejouer</button>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

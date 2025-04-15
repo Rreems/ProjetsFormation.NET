@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.Learning.Navigation.Pages.SecondPage"
+             Title="SecondPage">
+    <VerticalStackLayout Spacing="10">
+        <Label x:Name="lblText" Text="{Binding Text}" HorizontalTextAlignment="Center" />
+        <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+            <Button x:Name="btnPreviousPage" Text="Previous" Clicked="btnPreviousPage_Clicked" />
+            <Button x:Name="btnNextPage" Text="Next" Clicked="btnNextPage_Clicked" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

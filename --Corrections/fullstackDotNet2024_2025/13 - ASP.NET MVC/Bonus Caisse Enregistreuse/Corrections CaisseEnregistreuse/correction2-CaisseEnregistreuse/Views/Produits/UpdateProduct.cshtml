@@ -1,0 +1,47 @@
+﻿@model Produit
+@{
+    ViewData["Title"] = "Ajout d'un Produit";
+}
+
+<h1>@(Model == null ? "Ajout" : "Modification") d'un Produit</h1>
+
+
+<form asp-action="SubmitProduct" asp-controller="Produits" enctype="multipart/form-data">>
+    <div class="text-danger">@Html.ValidationSummary()</div>
+    <input asp-for="Id" type="text" class="form-control" hidden>
+    @*
+    On met l'Id dans le formulaire en cas de modification
+    pour pouvoir l'envoyer à notre action Submit
+    Ainsi, dans l'action Submit, on saura si on cherche à modifier ou ajouter un contact
+    *@
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" type="text" class="form-control">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>    
+    <div class="mb-3">
+        <label asp-for="CategorieId" class="form-label"></label>
+        <input asp-for="CategorieId" type="text" class="form-control">
+        <span asp-validation-for="CategorieId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <input asp-for="Description" type="text" class="form-control">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" type="text" class="form-control">
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="StorageQuantity" class="form-label"></label>
+        <input asp-for="StorageQuantity" type="text" class="form-control">
+        <span asp-validation-for="StorageQuantity" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ProduitPath" class="form-label"></label>
+        <input type="file" name="image" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

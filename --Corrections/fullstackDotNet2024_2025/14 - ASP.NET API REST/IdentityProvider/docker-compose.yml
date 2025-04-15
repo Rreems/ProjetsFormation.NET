@@ -1,0 +1,23 @@
+﻿
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: myuser
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+
+  identity-provider:
+    build:
+      context: .
+    ports:
+      - "80:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=mydatabase;Username=myuser;Password=mysecretpassword"
+      AppSettings__SecretKey: "Ceci est ma super clé secrete indéchiffrable. Vous ne la trouverez jamais."
+      AppSettings__TokenExpirationDays: 7
+    depends_on:
+      - postgres

@@ -1,0 +1,11 @@
+services:
+  ubuntu-a:
+    container_name: ubuntu-c
+    image: ubuntu-ping
+    tty: true
+    stdin_open: true
+  ubuntu-b:
+    container_name: ubuntu-d
+    image: ubuntu-ping
+    tty: true
+    stdin_open: true

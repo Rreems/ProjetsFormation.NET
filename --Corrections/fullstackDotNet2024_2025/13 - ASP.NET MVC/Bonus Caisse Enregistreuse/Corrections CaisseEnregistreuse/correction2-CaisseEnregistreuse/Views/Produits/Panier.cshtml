@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Le panier";
+    Produit c = Model;
+}
+@model Produit
+@if (Model == null)
+{
+    <p class="text-danger">Rien dans le panier</p>
+}
+else
+{
+    
+<div class="card-body">
+    <p>Catégorie Id : @Model.Id</p>
+    <p>Nom : @Model.Name</p>
+</div>
+}

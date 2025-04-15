@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "8d83a5a3-ba2c-44ee-b68e-18fb0adf531f",
+		"name": "JSONPlaceholder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43276681"
+	},
+	"item": [
+		{
+			"name": "Get all users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Get status code 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get status code 200 (arrow)\", () => {\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Get an array\", () => {\r",
+							"    pm.expect(response).to.be.an(\"array\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get something in the array\", () => {\r",
+							"    pm.expect(response.length).to.be.above(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get an array of objects\", () => {\r",
+							"    pm.expect(response[0]).to.be.an(\"object\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get an array of users\", () => {\r",
+							"    const firstObj = response[0];\r",
+							"\r",
+							"    pm.expect(firstObj.id).to.be.a(\"number\");\r",
+							"    pm.expect(firstObj.name).to.be.a(\"string\");\r",
+							"    pm.expect(firstObj.username).to.be.a(\"string\");\r",
+							"    pm.expect(firstObj.email).to.be.a(\"string\");\r",
+							"    pm.collectionVariables.set(\"firstUserId\", response[0].id);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Get status code 200\", () => {\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get an object\", () => {\r",
+							"    pm.expect(response).to.be.an(\"object\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get a user\", () => {\r",
+							"    pm.expect(response).to.have.property(\"id\");\r",
+							"    pm.expect(response.id).to.be.a(\"number\");\r",
+							"    pm.expect(response.name).to.not.be.undefined;\r",
+							"    pm.expect(response.username).to.be.a(\"string\");\r",
+							"    pm.expect(response.email).to.be.a(\"string\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/:userid",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":userid"
+					],
+					"variable": [
+						{
+							"key": "userid",
+							"value": "{{firstUserId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Get status code 201\", () => {\r",
+							"    pm.expect(pm.response.code).to.eql(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get back an object\", () => {\r",
+							"    pm.expect(response).to.be.an(\"object\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get back a user with an id\", () => {\r",
+							"    pm.expect(response.id).to.be.a(\"number\");\r",
+							"    pm.expect(response.name).to.be.a(\"string\");\r",
+							"    pm.expect(response.username).to.be.a(\"string\");\r",
+							"});\r",
+							"\r",
+							"// Vérifier que l'utilisateur est bien ajouté en BdD"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomFirstName}}\",\r\n    \"username\": \"{{$randomUserName}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit user at id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Get status code 200\", () => {\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get back an object\", () => {\r",
+							"    pm.expect(response).to.be.an(\"object\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get back a user\", () => {\r",
+							"    pm.expect(response.id).to.be.a(\"number\");\r",
+							"    pm.expect(response.name).to.be.a(\"string\");\r",
+							"    pm.expect(response.username).to.be.a(\"string\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Id wasn't changed\", () => {\r",
+							"    let responseId = response.id;\r",
+							"    pm.expect(responseId).to.eq(pm.collectionVariables.get(\"firstUserId\"));\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"johny\",\r\n    \"username\": \"johnybgood\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit name of user at id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Get status code 200\", () => {\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get back an object\", () => {\r",
+							"    pm.expect(response).to.be.an(\"object\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get back a user\", () => {\r",
+							"    pm.expect(response.id).to.be.a(\"number\");\r",
+							"    pm.expect(response.name).to.be.a(\"string\");\r",
+							"    pm.expect(response.username).to.be.a(\"string\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Id wasn't changed\", () => {\r",
+							"    let responseId = response.id;\r",
+							"    pm.expect(responseId).to.eq(pm.collectionVariables.get(\"firstUserId\"));\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"johny\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user at id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get status code 200\", () => {\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://jsonplaceholder.typicode.com",
+			"type": "string"
+		},
+		{
+			"key": "firstUserId",
+			"value": "USERID",
+			"type": "string"
+		}
+	]
+}

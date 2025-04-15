@@ -1,0 +1,31 @@
+﻿@page "/bind"
+<h3>Bind</h3>
+
+<p>
+    <input @bind="_inputValue" />
+    @*par défaut l'évennement de bind est "onchange" => la valeur ne s'actualise que si on quitte l'input (si on perd le focus)*@
+</p>
+<p>
+    <input @bind="InputValue2" @bind:event="oninput" />
+    @* avec "oninput" on met à jour la variable liée en direct lors de la saisie *@
+</p>
+
+<ul>
+    <li><code>_inputValue</code>: @_inputValue</li>
+    <li><code>InputValue2</code>: @InputValue2</li>
+</ul>
+
+<input type="checkbox" @bind="Checked" />
+
+@if (Checked)
+{
+    <h3>C'est Coché !'</h3>
+}
+
+@code {
+    private string? _inputValue;
+
+    public string? InputValue2 { get; set; }
+
+    public bool Checked { get; set; }
+}

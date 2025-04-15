@@ -1,0 +1,110 @@
+/* SELECTEUR SIMPLES */
+
+/* sélecteur de type */
+/* on sélectionne une balise CSS */
+p {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Sélecteur d'id */
+/* L'id est unique à la page HTML */
+/* Un élément ne peut avoir qu'un seul ID */
+#red {
+    color: red;
+}
+
+/* Sélecteur de classe */
+/* S'applique grâce à l'attribut classe dans un élément HTML */
+/* On peut en appliquer plusieurs grâce au séparateur ' ' */
+/* exemple: <p class="toto titi tata"> */
+.uppercase {
+    text-transform: uppercase;
+}
+
+.spacing-lg {
+    letter-spacing: 0.5em;
+}
+
+/* Sélecteur d'attribut */
+/* Permet de sélectionner un élémement par rapport à l'un de ses attributs */
+[name] {
+    padding: 1em 4px;
+}
+
+/* valeur exacte */
+[name="name"] {
+    background-color: azure;
+}
+
+/* fini par 'e' */
+[name$="e"] {
+    border-radius: 10px;
+}
+
+/* COMBINATEURS */
+
+/* Sélecteur d'élément voisin direct */
+/* Tous les voisins direct (sans imbrication) d'un élément qui a la classe .principal */
+.principal + p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Sélecteur d'élément voisin */
+
+.principal ~ .voisin-lointain {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Sélecteur d'éléments enfants direct */
+/* Je veux tous les li qui sont des enfants direct d'un UL */
+ul > li {
+    font-style: italic;
+}
+
+/* Sélecteur d'éléments enfants (qu'importe le niveau d'imbrication) */
+ul a {
+    color: deepskyblue;
+}
+
+/* Pseudo classes */
+/* Cibler un élément par rapport à son état */
+a:hover {
+    color: green;
+    text-decoration: none;
+    cursor: crosshair;
+}
+
+/* Pseudo éléments */
+/* Représente une entité du document qui n'est représentée en HTML */
+p::first-letter {
+    font-size: 2em;
+    text-decoration: underline;
+}
+
+/* Imbrication du style */
+.card {
+    
+    width: 200px;
+
+    .card-title {
+        font-size: 2em;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .card-image {
+        object-fit: contain;
+        width: max-content;
+    }
+}
+
+/* .card {
+
+}
+
+.card .card-title {
+
+}
+
+.card .card-image {
+
+} */

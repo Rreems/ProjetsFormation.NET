@@ -1,0 +1,45 @@
+/* Rem est une unité relative par rapport à la taille de l'élément racine */
+/* x fois la taille de la police de l'élément racine en pixel */
+/* si la font-size de la balise HTML vaut 16px alors 2rem fera 32px */
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+/* em est une unité relative qui mesure la taille de la police en pixel par rapport à l'élément parent */
+/* si mon p est dans une balise main dont la police vaut 20px alors la police de p en 1.2 vaudra 24px */
+p {
+    font-size: 1.2em;
+}
+
+/* l'unité ch correspond à la largeur du caractère 0 de la police d'écriture */
+blockquote {
+    max-width: 30ch;
+}
+
+span {
+    font-size: 24px;
+}
+
+/* Les éléments enfants vont grandir vu qu'ils profitent du mécanisme d'héritage */
+html {
+    font-size: 18px;
+    /* width: 60%; */
+}
+
+
+.box {
+    width: 5cm;
+    height: 10mm;
+    background-color: red;
+    transform-origin: 50%;
+    transform: rotate(4deg);
+}
+
+/* vw c'est 1% de la largeur de la taille d'écran */
+/* vh c'est 1% de la hauteur de la taille d'écran */
+html {
+    width: 50vw;
+    height: 100vh;
+}
+

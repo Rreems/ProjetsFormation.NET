@@ -1,0 +1,71 @@
+﻿@page "/"
+
+<PageTitle>Nombre Magique</PageTitle>
+
+<h3>Nombre Magique</h3>
+
+@if (IsGameOver)
+{
+    <h2>@(IsWin ? "Gagné ! 🤪" : "Perdu 😭")</h2>
+    <button @onclick="Restart" class="btn btn-primary">Rejouer</button>
+}
+else
+{
+    <h4>Devinez un nombre magique compris entre 0 et 20</h4>
+
+    <input type="number" @bind="InputValue"/>
+    <button @onclick="TestNumber" class="btn btn-primary">Tester</button>
+
+    <p class="text-danger">@LifeString</p>
+}
+
+Nombre à trouver : @Number
+
+@code {
+
+    private int InputValue { get; set; }
+
+    private int Number { get; set; }
+
+    private int Lives { get; set; } = 5;
+
+    protected string LifeString => new string('❤', Lives); //❤❤❤❤❤
+
+    public int Max { get; set; } = 20;
+
+    public bool IsGameOver { get; set; }
+    public bool IsWin { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        Restart();
+    }
+
+    private void TestNumber()
+    {
+        if (InputValue == Number) // gagné
+        {
+            IsWin = true;
+            IsGameOver = true;
+            return;
+        }
+
+        Lives--;
+
+        if(Lives == 0) // perdu
+        {
+            IsWin = false;
+            IsGameOver = true;
+        }
+    }
+
+    private void Restart()
+    {
+        IsGameOver = false;
+        Lives = 5;
+        Random rnd = new Random();
+        Number = rnd.Next(Max + 1);
+        InputValue = 0;
+    }
+}

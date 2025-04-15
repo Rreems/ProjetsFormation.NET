@@ -1,0 +1,34 @@
+﻿@using System.Globalization
+<div class="col">
+    @foreach (var pizzaDict in Cart)
+    {
+        <div class="row align-items-center">
+            <span class="col text-warning text-uppercase font-weight-bold">@pizzaDict.Key.Name x @pizzaDict.Value</span>
+            <span class="col-3 font-weight-bold">
+                @((pizzaDict.Key.Price * pizzaDict.Value).ToString("C2", CultureInfo.CreateSpecificCulture("fr-FR")))
+            </span>
+            <button class="col-1 btn text-danger font-weight-bold" @onclick="()=>RemoveFromCart(pizzaDict.Key)"><i class="bi bi-cart-dash"></i></button>
+        </div>
+    }
+    <h3 class="font-weight-bold">Total : @Total.ToString("C2", CultureInfo.CreateSpecificCulture("fr-FR"))</h3>
+    <button class="btn btn-danger" @onclick="EmptyCart"><span class="bi bi-cart-x"></span>&ensp; Vider le panier</button>
+</div>
+
+@code {
+    [Parameter]
+    public Dictionary<Pizza, int> Cart { get; set; }
+
+    private decimal Total => Cart.Sum(pizza => pizza.Key.Price * pizza.Value);
+
+    private void RemoveFromCart(Pizza pizza)
+    {
+        if (Cart[pizza] == 1)
+            Cart.Remove(pizza);
+        else
+            Cart[pizza]--;
+    }
+    private void EmptyCart()
+    {
+        Cart.Clear();
+    }
+}

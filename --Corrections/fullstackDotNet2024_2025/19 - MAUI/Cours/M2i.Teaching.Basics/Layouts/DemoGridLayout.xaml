@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M2i.Teaching.Basics.Layouts.DemoGridLayout"
+             Title="DemoGridLayout">
+    <!--<Grid RowDefinitions="50, 50, 100" ColumnDefinitions="100, 100">
+        <Label Grid.Row="1" Grid.Column="1" Text="Label A" 
+               BackgroundColor="DarkRed" TextColor="White" />
+        <Label Text="Label B" BackgroundColor="LightGreen" 
+               Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+               VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+               Text="Label C" BackgroundColor="LightCoral"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    </Grid>-->
+    <Grid RowDefinitions="*, *, 2*" ColumnDefinitions="*, *, *, *, *">
+        <Label Grid.Row="1" Grid.Column="1" Text="Label A" 
+               BackgroundColor="DarkRed" TextColor="White" />
+        <Label Text="Label B" BackgroundColor="LightGreen" 
+               Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+               VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+               Text="Label C" BackgroundColor="LightCoral"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    </Grid>
+</ContentPage>

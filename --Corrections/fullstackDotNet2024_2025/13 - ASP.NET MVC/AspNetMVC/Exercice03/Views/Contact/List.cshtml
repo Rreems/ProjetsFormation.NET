@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	ViewData["Title"] = "Contacts List";
+
+	// var contacts = (HashSet<Contact>) ViewData["Contacts"];
+	@model HashSet<Contact>
+}
+
+<head>
+	<div class="d-flex">
+		<h2>Contact List</h2>
+		<div class="ms-auto">
+			<a asp-action="Create" class="btn btn-success">
+				<span class="bi bi-plus-circle"></span> Add
+			</a>
+		</div>
+	</div>
+	<hr />
+</head>
+<body>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				@* Pour afficher les valeurs de [Display] de notre CLASSE de contact, vu que l'on a pas à notre disposition d'instance de ce type, 
+						on va privilégier l'utilisation de @Html.DisplayNameForInnerType().
+
+					Si l'on avait eu à notre disposition une instance de contact, on aurait pu réussir à atteindre le même visuel avec @Html.DisplayNameFor(),
+						mais ici, cela n'est possible qu'en faisant une récupération d'un élément de notre variable de type conteneur:
+
+						@Html.DisplayNameFor(ViewBag.Contacts.First().Firstname)
+				*@
+				<th>@Html.DisplayNameForInnerType((Contact c) => c.FirstName)</th>
+				<th>@Html.DisplayNameForInnerType((Contact c) => c.LastName)</th>
+				<th>@Html.DisplayNameForInnerType((Contact c) => c.Email)</th>
+				<th>@Html.DisplayNameForInnerType((Contact c) => c.PhoneNumber)</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			@* @foreach (var contact in ViewBag.Contacts) { *@
+			@* @foreach (var contact in contacts) *@
+			@foreach (var contact in Model)
+			{
+				<tr>
+					<td>@contact.Id</td>
+					<td>@contact.FirstName</td>
+					<td>@contact.LastName</td>
+					<td>@contact.Email</td>
+					<td>@contact.PhoneNumber</td>
+					<td><a asp-action="Details" asp-route-id="@contact.Id" class="btn btn-secondary"><span class="bi bi-pencil-square"></span> Details</a></td>
+				</tr>
+			}
+		</tbody>
+</body>
+

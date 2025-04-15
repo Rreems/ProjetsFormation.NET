@@ -1,0 +1,36 @@
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.example-1 {
+    list-style-type: none;
+    gap: 1rem;
+    border: 1px solid black;
+    padding: 2rem 1rem;
+    justify-content: space-around;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.example-2 {
+    list-style-type: none;
+    gap: 1rem;
+    border: 1px solid black;
+    padding: 2rem 1rem;
+    align-items: center;
+}
+
+.example-2 :nth-last-child(2) {
+    order: -1;
+    align-self: end;
+}

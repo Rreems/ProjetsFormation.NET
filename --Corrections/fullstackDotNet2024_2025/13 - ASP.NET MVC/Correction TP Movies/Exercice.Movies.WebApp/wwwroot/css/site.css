@@ -1,0 +1,54 @@
+:root {
+    --btn-bg-color-unchecked: #303631;
+    --btn-bg-color-checked: #17b040;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+a.btn-movie-status {
+    font-size: .8rem;
+    text-decoration: none;
+    width: 12ch;
+    height: 3ch;
+    border: none;
+    color: white;
+    border-radius: 99999999px;
+    transition: all .2s;
+    padding: 0 0 .25ch 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.btn-movie-status:hover {
+    cursor: pointer;
+}
+
+a.btn-movie-status--seen {
+    background-color: var(--btn-bg-color-checked);
+}
+
+a.btn-movie-status--tosee {
+    background-color: var(--btn-bg-color-unchecked);
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}

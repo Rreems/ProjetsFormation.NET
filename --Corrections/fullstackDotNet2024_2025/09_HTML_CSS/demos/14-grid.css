@@ -1,0 +1,58 @@
+*, ::after, ::before {
+    margin: 0;
+}
+
+/* Déclaration de variables css */
+:root {
+    --gutter: 10px;
+    /* --spacing: 1rem; */
+}
+
+/* Element parent qui a le display grid */
+body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Permet de nommer les zones d'une grille */
+    grid-template-areas: 
+    "header header"
+    "main aside"
+    "footer footer";
+
+    row-gap: var(--spacing, 0);
+}
+
+/* Element enfant qu'on dispose au choix dans la grille */
+header {
+    min-height: 10dvh;
+    background-color: red;
+    /* grid-column: span 2; */
+    grid-area: header;
+}
+
+main {
+    min-height: 80dvh;
+    background-color: blue;
+    grid-area: main;
+    
+    /* Technique pour centrer un élément */
+    display: grid;
+    place-items: center;
+}
+
+aside {
+    background-color: yellow;
+    grid-area: aside;
+}
+
+footer {
+    min-height: 10dvh;
+    background-color: green;
+    /* grid-column: span 2; */
+    grid-area: footer;
+}
+
+.box {
+    height: 200px;
+    width: 200px;
+    background-color: crimson;
+}

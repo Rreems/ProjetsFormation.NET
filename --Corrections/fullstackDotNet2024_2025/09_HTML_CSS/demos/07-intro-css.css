@@ -1,0 +1,33 @@
+/* Formatage: ALT + MAJ + F */
+
+.box {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+.color {
+    color: oklch(lightness chroma hue);
+    color: hsl();
+    color: aqua;
+    color: #FF00FF;
+    color: rgb(from color r g b);
+}
+
+.unit {
+    font-size: 1rem;
+    font-size: 1em;
+    font-size: 16px;
+    font-size: 12ch;
+    font-size: 1cm;
+}
+
+/* 
+
+// élément que l'on souhaite sélectionner sur la page HTML
+selecteur {
+    // propriété de l'élément à modifier
+    propriété: valeur;
+}
+
+*/

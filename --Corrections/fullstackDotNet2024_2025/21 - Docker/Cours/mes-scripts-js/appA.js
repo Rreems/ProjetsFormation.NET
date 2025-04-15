@@ -1,0 +1,1 @@
+console.log("Je suis l'application A");
